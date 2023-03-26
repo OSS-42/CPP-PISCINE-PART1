@@ -6,30 +6,53 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 12:59:31 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/03/26 00:00:34 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/03/26 18:43:37 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Phonebook.Class.hpp"
 
 Phonebook::Phonebook(void) {
+	std::cout << std::endl;
+	std::cout << CYN "	▄████▄  ▄████▄   ▄█   ██████" << std::endl;
+	std::cout << CYN "	     █  █         █   █     " << std::endl;
+	std::cout << CYN "	  ▄███  █████▄    █   ▀████▄" << std::endl;
+	std::cout << CYN "	     █  █    █    █        █" << std::endl;
+	std::cout << CYN "	▀████▀  ▀████▀   ▄█▄  █████▀" << std::endl << std::endl;
+	std::cout << GRN "	#-----# FACE DE BOUC #-----#" NC << std::endl << std::endl;
 	return ;
 }
 
 Phonebook::~Phonebook(void) {
+	std::cout << std::endl;
+	std::cout << RED "	Au revoir et à bientôt sur ..." << std::endl;
+	std::cout << "	    3615 FACE DE BOUC !" << NC;
+	std::cout << std::endl;
 	return ;
 }
 
-Phonebook::addContact(void) {
-	int	i = Phonebook::getIndex(void);
-
+void	Phonebook::setContact(void) {
+	int	i = this->getIndex();
+	int	j = -1;
 	
+	std::cout << std::endl;
+	std::cout << REDB "Index #" << i << NC;
+	std::cout << std::endl;
+	while (++j < 5) {
+		this->m_Directory[i].setInformation(j);
+		if (this->m_Directory[i].getInformation(j).empty()) {
+			std::cout << RED "Entry cannot be empty. Retry" NC << std::endl;
+			this->m_Directory[i].setInformation(j);
+		}
+	}
 	i += 1;
-	Phonebook::setIndex(i);
+	this->setIndex(i);
 }
 
-Phonebook::getContact(int i) {
-	this->showDatabase(void);	
+void	Phonebook::getContact(void) {
+	this->showDatabase();	
+	
+	std::cout << "Enter an Entry Index to Search" << std::endl;
 	
 	std::string input;
 	while (1) {
@@ -38,61 +61,67 @@ Phonebook::getContact(int i) {
 		buffer >> std::ws >> input;
 		if (std::cin.eof())
 			exit (0);
-		else if (std::input.size() > 1 || std::isdigit(input[i]) == 0 || input[i] > 48 + 7) {
+		else if (input.size() > 1 || isdigit(input[0]) == 0 || input[0] > 48 + 7) {
 			std::cout << "Choisissez une valeur entre 0 et 7" << std::endl;
-			input.clear;
+			input.clear();
 		}
 		else {
-			int	i = std::atoi(input);
-			std::cout << "Index			 : " << input << std::endl ;
-			std::cout << "First Name	 : " << Phonebook::m_directory[i].m_firstName << std::endl;
-			std::cout << "Last Name		 : " << Phonebook::m_directory[i].m_lastName << std::endl;
-			std::cout << "Nickname		 : " << Phonebook::m_directory[i].m_nickname << std::endl;
-			std::cout << "Phone Number   : " << Phonebook::m_directory[i].m_phone<< std::endl;
-			std::cout << "Darkest Secret : " << Phonebook::m_directory[i].m_ecret << std::endl;
+			int	i;
+			std::istringstream(input) >> i;
+			std::cout << std::endl;
+			std::cout << REDB "Index #" << input << NC;
+			std::cout << std::endl;
+			
+			int j = -1;
+			while (++j < 5) {
+				if (j == 0) std::cout << "First Name : " << this->m_Directory[i].getInformation(j) << std::endl;
+				if (j == 1) std::cout << "Last Name : " << this->m_Directory[i].getInformation(j) << std::endl;
+				if (j == 2) std::cout << "Nickname : " << this->m_Directory[i].getInformation(j) << std::endl;
+				if (j == 3) std::cout << "Phone Number : " << this->m_Directory[i].getInformation(j) << std::endl;
+				if (j == 4) std::cout << "Darkest Secret : " << this->m_Directory[i].getInformation(j) << std::endl << std::endl;
+			}
 			break ;
 		}
 	}
+	return ;
 }
 
-Phonebook::showDatabase(void) {
-	std::cout << setw(10) << "[ Repertoire - Face de Bouc ]" << std::endl;
-	std::cout << setw(10); std::cout.width(43) << "   Index  " << "|" << "First Name" << "|" << " Last Name" << "|" << " Nickname " << std::endl;
+void	Phonebook::showDatabase(void) {
+	std::cout << std::endl;
+	std::cout << CYN "-------[ Répertoire - Face de Bouc ]-------" NC << std::endl << std::endl;
+	std::cout << "-------------------------------------------" << std::endl;
+	std::cout << "   Index  " << "|" << "First Name" << "|" << " Last Name" << "|" << " Nickname " << std::endl;
+	std::cout << "----------|----------|----------|----------" << std::endl;
+
+	for (int i = 0; i < 8; ++i) {
+		std::string	buffer, First_Name, Last_Name, Nick_Name;
+		if (this->m_Directory[i].getInformation(0).size() > 10)
+			First_Name = this->m_Directory[i].getInformation(0).substr(0,9) + ".";
+		else
+			First_Name = this->m_Directory[i].getInformation(0);
+			
+		if (this->m_Directory[i].getInformation(1).size() > 10)
+			Last_Name = this->m_Directory[i].getInformation(1).substr(0,9) + ".";
+		else
+			Last_Name = this->m_Directory[i].getInformation(1);
+			
+		if (this->m_Directory[i].getInformation(2).size() > 10)
+			Nick_Name = this->m_Directory[i].getInformation(2).substr(0,9) + ".";
+		else
+			Nick_Name = this->m_Directory[i].getInformation(2);
+		std::cout << std::setw(10) << i << "|" << std::setw(10) << First_Name << "|" << std::setw(10) << Last_Name << "|" << std::setw(10) << Nick_Name << std::endl;
+	}
 	std::cout << "-------------------------------------------" << std::endl;
 
-	Phonebook::setIndex(0);
-	for (int i = -1; i < 8; ++i) {
-		std::string	buffer;
-		std::string index = this->m_index;
-		if (std::this->Contact.m_directory[i].m_firstName.size() > 10)
-			std::string fname = this->Contact.m_directory[i].m_firstName.substr(0,9) + ".";
-		else
-			std::string fname = this->Contact.m_directory[i].m_firstName;
-			
-		if (std::this->Contact.m_directory[i].m_lastName.size() > 10)
-			std::string lname = this->Contact.m_directory[i].m_lastName.substr(0,9) + ".";
-		else
-			std::string lname = this->Contact.m_directory[i].m_lastName;
-			
-		if (std::this->Contact.m_directory[i].m_nickame.size() > 10)
-			std::string nname = this->Contact.m_directory[i].m_nickame.substr(0,9) + ".";
-		else
-			std::string nname = this->Contact.m_directory[i].m_nickame;
-		std::cout << setw(10); std::cout.width(43) << index << "|" << fname << "|" << lname << "|" << nname << std::endl;
-		Phonebook::setIndex(0 + i);
-	}
-	Phonebook::setIndex(0);
-
-	std::cout << "Enter an Entry Index to Search" << std::endl;
+	return ;
 }
 
-
-Phonebook::getIndex(void) {
-	if (this->m_Index > 9)
-		Phonebook::setIndex(0);
+int	Phonebook::getIndex(void) {
+	if (this->m_Index > 7)
+		this->setIndex(0);
 	return (this->m_Index);
 }
 
-Phonebook::setIndex(int i) {
+void	Phonebook::setIndex(int i) {
 	this->m_Index = i;
 }

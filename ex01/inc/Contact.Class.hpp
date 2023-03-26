@@ -6,14 +6,25 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 12:51:44 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/03/25 23:49:39 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/03/26 18:58:48 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_CLASS_H
 # define CONTACT_CLASS_H
 
+# include <iostream>
+# include <iomanip>
+# include <istream>
+# include <sstream>
+# include <string>
 # include <cctype>
+
+# define NC "\e[0m"
+# define RED "\e[0;31m"
+# define GRN "\e[0;32m"
+# define CYN "\e[0;36m"
+# define REDB "\e[41m"
 
 class Contact {
 	
@@ -24,25 +35,17 @@ public:
 	~Contact(void);
 	
 	// Accessors - Setters
-	void	setFirstName(void);
-	void	setLastName(void);
-	void	setSurName(void);
-	void	setPhone(void);
-	void	setSecret(void);
+	void	setInformation(int flag);
 	
 	// Accessors - Getters
-	std::string	getFirstName(void);
-	std::string	getLastName(void)
-	std::string	getSurName(void);
-	std::string	getPhone(void);
-	std::string	getSecret(void);
+	std::string	getInformation(int flag);
 
 private:
-	std::string	m_firstName;
-	std::string	m_lastName;
-	std::string	m_nickame;
-	std::string	m_phone;
-	std::string	m_secret;
+	std::string	m_FirstName;
+	std::string	m_LastName;
+	std::string	m_Nickname;
+	std::string	m_Phone;
+	std::string	m_Secret;
 };
 
 #endif

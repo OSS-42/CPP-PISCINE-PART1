@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 12:47:09 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/03/25 18:43:44 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/03/26 17:38:13 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,38 @@
 # include <string>
 # include "../inc/Phonebook.Class.hpp"
 
+# define NC "\e[0m"
+# define RED "\e[0;31m"
+# define GRN "\e[0;32m"
+# define CYN "\e[0;36m"
+# define REDB "\e[41m"
+
 int main (int argc, char **argv) { 
+
+	(void) argv;
 	
 	if (argc > 1) {
 		std::cout << "Usage : ./facedebouc" << std::endl;
 		return 0;
 	}
-	std::cout << "Vous venez de composer 3615 FACE DE BOUC" << std::endl;
-	std::cout << "Pour créer un nouveau contact, tapez ADD" << std::endl;
-	std::cout << "Pour chercher un contact, tapez SEARCH" << std::endl;
-	std::cout << "Pour quitter, tapez EXIT" << std::endl;
 
+	Phonebook FacedeBouc;
 	std::string input;
+
 	while (1) {
+		std::cout << std::endl;
+		std::cout << "Pour créer un nouveau contact, tapez " << GRN "ADD" NC << std::endl;
+		std::cout << "Pour chercher un contact, tapez " << CYN "SEARCH" NC << std::endl;
+		std::cout << "Pour quitter, tapez " << RED "EXIT" NC << std::endl;
 		std::getline(std::cin, input);
 		std::istringstream buffer (input);
 		buffer >> std::ws >> input;
 		if (std::cin.eof()) {
 			exit (0);
 		} else if (input.compare("ADD") == 0) {
-			Phonebook::addContact();
+			FacedeBouc.setContact();
 		} else if (input.compare("SEARCH") == 0) {
-			search();
+			FacedeBouc.getContact();
 		} else if (input.compare("EXIT") == 0) {
 			break ;
 		} else {
