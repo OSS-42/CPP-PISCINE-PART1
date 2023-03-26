@@ -2,7 +2,7 @@
 #								   VARIABLES								   #
 #------------------------------------------------------------------------------#
 # Filename
-NAME = megaphone
+NAME = facedebouc
 
 # Compiler and flags
 CC = c++
@@ -12,11 +12,14 @@ RM = rm -rf
 #------------------------------------------------------------------------------#
 #							SOURCES & DIRECTORIES							   #
 #------------------------------------------------------------------------------#
-# HEADER = inc/megaphone.hpp
+HEADER = 	inc/Phonebook.Class.hpp \
+			inc/Contact.Class.hpp
 D_SRC = src/
 D_OBJ = obj/
 OBJS = $(patsubst $(D_SRC)%.cpp,$(D_OBJ)%.o,$(SRCS))
-SRCS = src/megaphone.cpp 
+SRCS = 	src/main.cpp \
+		src/Phonebook.Class.cpp \
+		src/Contact.Class.cpp
 
 #------------------------------------------------------------------------------#
 #									 RULES									   #
