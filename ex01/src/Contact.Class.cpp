@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 12:59:10 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/03/26 19:00:24 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/03/26 23:45:14 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,11 @@ void	Contact::setInformation(int	flag) {
 	std::string Input;
 	
 	while (1) {
+		std::string Input;
 		std::getline(std::cin, Input);
-		std::istringstream buffer (Input);
-		buffer >> std::ws >> Input;
-		std::cout << CYN;
-		std::cout << Input << NC;
-		std::cout << std::endl;
+		std::istringstream buffer(Input);
+		buffer >> std::ws;
+		std::getline(buffer, Input);
 		if (std::cin.eof())
 			exit (0);	
 		else if (flag == 0) {

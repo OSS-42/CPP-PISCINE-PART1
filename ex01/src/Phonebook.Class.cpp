@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 12:59:31 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/03/26 18:43:37 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/03/27 00:11:06 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,20 @@ Phonebook::Phonebook(void) {
 
 Phonebook::~Phonebook(void) {
 	std::cout << std::endl;
-	std::cout << RED "	Au revoir et à bientôt sur ..." << std::endl;
+	std::cout << RED "	Goodbye and See ya Soon on ..." << std::endl;
 	std::cout << "	    3615 FACE DE BOUC !" << NC;
 	std::cout << std::endl;
 	return ;
+}
+
+bool	Phonebook::IsPhoneNum(const char *str) {
+	int	i = -1;
+
+	while (str && str[++i]) {
+		if ((str[i] < '0' || str[i] > '9') || str[i] == '-')
+			return (false);
+	}
+	return (true);	
 }
 
 void	Phonebook::setContact(void) {
@@ -40,11 +50,18 @@ void	Phonebook::setContact(void) {
 	std::cout << std::endl;
 	while (++j < 5) {
 		this->m_Directory[i].setInformation(j);
-		if (this->m_Directory[i].getInformation(j).empty()) {
+		while (this->m_Directory[i].getInformation(j).empty()) {
 			std::cout << RED "Entry cannot be empty. Retry" NC << std::endl;
+			this->m_Directory[i].setInformation(j);
+			
+		} 
+		while (j == 3 && this->IsPhoneNum(this->m_Directory[i].getInformation(j).c_str()) == 0) {
+			std::cout << RED "Format is NUM and '-' only. Retry" NC << std::endl;
 			this->m_Directory[i].setInformation(j);
 		}
 	}
+	std::cout << std::endl;
+	std::cout << GRN "Contact added." NC << std::endl << std::endl;
 	i += 1;
 	this->setIndex(i);
 }
@@ -62,7 +79,7 @@ void	Phonebook::getContact(void) {
 		if (std::cin.eof())
 			exit (0);
 		else if (input.size() > 1 || isdigit(input[0]) == 0 || input[0] > 48 + 7) {
-			std::cout << "Choisissez une valeur entre 0 et 7" << std::endl;
+			std::cout << "Choose a value between 0 and 7" << std::endl;
 			input.clear();
 		}
 		else {
@@ -88,7 +105,7 @@ void	Phonebook::getContact(void) {
 
 void	Phonebook::showDatabase(void) {
 	std::cout << std::endl;
-	std::cout << CYN "-------[ Répertoire - Face de Bouc ]-------" NC << std::endl << std::endl;
+	std::cout << CYN "-------[ Directory - Face de Bouc ]-------" NC << std::endl << std::endl;
 	std::cout << "-------------------------------------------" << std::endl;
 	std::cout << "   Index  " << "|" << "First Name" << "|" << " Last Name" << "|" << " Nickname " << std::endl;
 	std::cout << "----------|----------|----------|----------" << std::endl;

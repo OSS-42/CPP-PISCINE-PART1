@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 12:52:29 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/03/26 17:12:08 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/03/26 23:58:01 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,9 @@ public:
 	// Database Visual Representation
 	void	showDatabase(void);
 
+	//utils
+	bool	IsPhoneNum(const char *str);
+	
 private:
 
 	int		m_Index;

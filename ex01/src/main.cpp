@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 12:47:09 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/03/26 17:38:13 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/03/27 00:06:11 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ int main (int argc, char **argv) {
 
 	while (1) {
 		std::cout << std::endl;
-		std::cout << "Pour créer un nouveau contact, tapez " << GRN "ADD" NC << std::endl;
-		std::cout << "Pour chercher un contact, tapez " << CYN "SEARCH" NC << std::endl;
-		std::cout << "Pour quitter, tapez " << RED "EXIT" NC << std::endl;
+		std::cout << "To create a new contact, type " << GRN "ADD" NC << std::endl;
+		std::cout << "To search a contact, type " << CYN "SEARCH" NC << std::endl;
+		std::cout << "To quit, type " << RED "EXIT" NC << std::endl;
 		std::getline(std::cin, input);
 		std::istringstream buffer (input);
 		buffer >> std::ws >> input;
