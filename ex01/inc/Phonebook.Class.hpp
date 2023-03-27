@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.class.hpp                                :+:      :+:    :+:   */
+/*   Phonebook.Class.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 12:52:29 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/03/26 23:58:01 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/03/27 09:26:02 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ public:
 	void	showDatabase(void);
 
 	//utils
-	bool	IsPhoneNum(const char *str);
+	bool	IsPhoneNum(std::string str) const;
 	
 private:
 

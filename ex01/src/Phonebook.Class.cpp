@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.class.cpp                                :+:      :+:    :+:   */
+/*   Phonebook.Class.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 12:59:31 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/03/27 00:11:06 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/03/27 09:42:48 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,14 @@ Phonebook::~Phonebook(void) {
 	return ;
 }
 
-bool	Phonebook::IsPhoneNum(const char *str) {
-	int	i = -1;
+bool	Phonebook::IsPhoneNum(std::string str) const {
+	unsigned long	i = 0;
 
-	while (str && str[++i]) {
-		if ((str[i] < '0' || str[i] > '9') || str[i] == '-')
-			return (false);
+	while (i++ < str.length()) {
+		if (isdigit(str[i]) || str[i] == '-')
+			return (true);
 	}
-	return (true);	
+	return (false);
 }
 
 void	Phonebook::setContact(void) {
@@ -53,9 +53,9 @@ void	Phonebook::setContact(void) {
 		while (this->m_Directory[i].getInformation(j).empty()) {
 			std::cout << RED "Entry cannot be empty. Retry" NC << std::endl;
 			this->m_Directory[i].setInformation(j);
-			
-		} 
-		while (j == 3 && this->IsPhoneNum(this->m_Directory[i].getInformation(j).c_str()) == 0) {
+		}
+		
+		while (j == 3 && this->IsPhoneNum(this->m_Directory[i].getInformation(j)) == 0) {
 			std::cout << RED "Format is NUM and '-' only. Retry" NC << std::endl;
 			this->m_Directory[i].setInformation(j);
 		}

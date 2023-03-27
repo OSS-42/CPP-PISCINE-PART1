@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.class.hpp                                  :+:      :+:    :+:   */
+/*   Contact.Class.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 12:51:44 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/03/26 23:43:39 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/03/27 09:05:23 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ public:
 	void	setInformation(int flag);
 	
 	// Accessors - Getters
-	std::string	getInformation(int flag);
+	std::string	getInformation(int flag) const;
 
 private:
 	std::string	m_FirstName;

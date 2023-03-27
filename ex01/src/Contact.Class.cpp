@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.class.cpp                                  :+:      :+:    :+:   */
+/*   Contact.Class.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 12:59:10 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/03/26 23:45:14 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/03/27 09:29:28 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,28 +42,30 @@ void	Contact::setInformation(int	flag) {
 		buffer >> std::ws;
 		std::getline(buffer, Input);
 		if (std::cin.eof())
-			exit (0);	
-		else if (flag == 0) {
-			this->m_FirstName = Input;
-			break ;
-		} else if (flag == 1) {
-			this->m_LastName = Input;
-			break ;
-		} else if (flag == 2) {
-			this->m_Nickname = Input;
-			break ;
-		} else if (flag == 3) {
-			this->m_Phone = Input;
-			break ;
-		} else if (flag == 4) {
-			this->m_Secret = Input;
-			break ;
+			exit (0);
+		switch (flag) {
+			case 0 :
+				this->m_FirstName = Input;
+				break ;
+			case 1 :
+				this->m_LastName = Input;
+				break ;
+			case 2 :
+				this->m_Nickname = Input;
+				break ;
+			case 3 :
+				this->m_Phone = Input;
+				break ;
+			case 4 :
+				this->m_Secret = Input;
+				break ;
 		}
+		break ;
 	}
 	return ;
 }
 
-std::string	Contact::getInformation(int	flag) {
+std::string	Contact::getInformation(int	flag) const {
 	if (flag == 0)
 		return (this->m_FirstName);
 	else if (flag == 1)
