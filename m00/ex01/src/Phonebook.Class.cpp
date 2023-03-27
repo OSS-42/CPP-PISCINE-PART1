@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 12:59:31 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/03/27 09:42:48 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/03/27 13:17:17 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,10 @@ Phonebook::~Phonebook(void) {
 bool	Phonebook::IsPhoneNum(std::string str) const {
 	unsigned long	i = 0;
 
-	while (i++ < str.length()) {
+	while (i < str.length()) {
 		if (isdigit(str[i]) || str[i] == '-')
 			return (true);
+		i++;
 	}
 	return (false);
 }
