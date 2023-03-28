@@ -12,12 +12,12 @@ RM = rm -rf
 #------------------------------------------------------------------------------#
 #							SOURCES & DIRECTORIES							   #
 #------------------------------------------------------------------------------#
-HEADER = 	inc/Account.hpp
-D_SRC = src/
+HEADER = Account.hpp
+# D_SRC = src/
 D_OBJ = obj/
-OBJS = $(patsubst $(D_SRC)%.cpp,$(D_OBJ)%.o,$(SRCS))
-SRCS = 	src/Account.cpp \
-		src/tests.cpp
+OBJS = $(patsubst %.cpp,$(D_OBJ)%.o,$(SRCS))
+SRCS = 	Account.cpp \
+		tests.cpp
 
 #------------------------------------------------------------------------------#
 #									 RULES									   #
@@ -31,7 +31,7 @@ $(NAME):	$(D_OBJ) $(OBJS)
 $(D_OBJ):
 	@mkdir -p $(D_OBJ)
 
-$(OBJS): $(D_OBJ)%.o : $(D_SRC)%.cpp
+$(OBJS): $(D_OBJ)%.o : %.cpp
 	@$(call run_and_test, $(CC) $(CFLAGS) -c $< -o $@)
 
 clean:
