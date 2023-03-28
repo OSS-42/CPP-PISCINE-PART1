@@ -6,17 +6,18 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 09:17:52 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/03/24 12:45:19 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/03/28 09:56:03 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+# include <iostream>
+# include <string>
+# include <cctype>
+# include <locale>
 
 int	main (int argc, char **argv)
 {
 	int	av;
-	int	i;
 
 	av = 0;
 	if (argc == 1)
@@ -26,15 +27,12 @@ int	main (int argc, char **argv)
 	}
 	while (argv[++av])
 	{
+		std::locale loc;
 		std::string str (argv[av]);
 		std::size_t size = str.size();
-		i = -1;
-		while (++i < (int)size)
-		{
-			if (str[i] >= 97 && str[i] <= 122 && str[i])
-				str[i] -= 32;
+		for (unsigned long i = 0; i < size; i++) {
+			std::cout << toupper(str[i], loc);
 		}
-		std::cout << str;
 	}
 	std::cout << std::endl;
 	return (0);
