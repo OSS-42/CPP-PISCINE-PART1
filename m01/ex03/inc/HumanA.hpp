@@ -1,51 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 10:58:45 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/03/30 11:39:06 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/03/30 15:59:51 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
 
-# include <iostream>
-# include <string>
-
-// COLOURS CODES
-#define NC "\e[0m"
-#define RED "\e[0;31m"
-#define GRN "\e[0;32m"
-#define CYN "\e[0;36m"
-#define REDB "\e[41m"
+# include "../inc/Weapon.hpp"
 
 //Class
-class Zombie {
+class HumanA {
 		public :
 
 		// mandatory
-			Zombie(void);				// Default
-			Zombie(std::string name); 	// Constructeur
-			~Zombie(void);				// Destructor
+			HumanA(void);				// Default
+			HumanA (std::string type, Weapon weapon); 	// Constructeur
+			~HumanA(void);				// Destructor
 
 		// accessor - getter
-			std::string		getName(void);
+			std::string		getName(void) const;
+			std::string		getType(void) const;
 
 		// accessor - setter
 			void	setName(std::string name);
+			void	setType(Weapon newType);
 
 		// other
-			void	announce(void) const;
+			void	attack(void) const;
 
 		private :
-			std::string m_name;
+			std::string	m_name;
+			Weapon		m_type;
 };
 
 // Zombies creation
-	Zombie* zombieHorde(int N, std::string name);
+	;
 
 #endif
