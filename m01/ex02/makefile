@@ -2,7 +2,7 @@
 #								   VARIABLES								   #
 #------------------------------------------------------------------------------#
 # Filename
-NAME = brainz2
+NAME = brain
 
 # Compiler and flags
 CC = c++
@@ -12,13 +12,11 @@ RM = rm -rf
 #------------------------------------------------------------------------------#
 #							SOURCES & DIRECTORIES							   #
 #------------------------------------------------------------------------------#
-HEADER = inc/Zombie.hpp 
+# HEADER = inc/Brain.hpp 
 D_SRC = src/
 D_OBJ = obj/
 OBJS = $(patsubst $(D_SRC)%.cpp,$(D_OBJ)%.o,$(SRCS))
-SRCS = 	src/main.cpp \
-		src/Zombie.cpp \
-		src/zombieHorde.cpp
+SRCS = 	src/main.cpp
 
 #------------------------------------------------------------------------------#
 #									 RULES									   #

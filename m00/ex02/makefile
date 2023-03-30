@@ -31,7 +31,7 @@ $(NAME):	$(D_OBJ) $(OBJS)
 $(D_OBJ):
 	@mkdir -p $(D_OBJ)
 
-$(OBJS): $(D_OBJ)%.o : %.cpp
+$(OBJS): $(D_OBJ)%.o : %.cpp $(HEADER)
 	@$(call run_and_test, $(CC) $(CFLAGS) -c $< -o $@)
 
 clean:
