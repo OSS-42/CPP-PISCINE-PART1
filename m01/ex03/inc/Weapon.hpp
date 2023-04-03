@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 10:58:45 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/03/30 15:39:45 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/03 14:12:07 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ class Weapon {
 		public :
 
 		// mandatory
-			Weapon(void);				// Default
 			Weapon(std::string type); 	// Constructeur
 			~Weapon(void);				// Destructor
 
@@ -41,8 +40,5 @@ class Weapon {
 		private :
 			std::string m_type;
 };
-
-// Zombies creation
-	;
 
 #endif
