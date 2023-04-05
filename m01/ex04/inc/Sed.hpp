@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   Sed.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 10:58:45 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/05 09:42:22 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/05 13:24:21 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
+#ifndef SED_HPP
+# define SED_HPP
 
 # include <iostream>
+# include <fstream>
 # include <string>
 
 // COLOURS CODES
@@ -23,21 +24,7 @@
 #define CYN "\e[0;36m"
 #define REDB "\e[41m"
 
-//Class
-class Weapon {
-		public :
-
-		// mandatory
-			Weapon(std::string type); 	// Constructeur
-			~Weapon(void);				// Destructeur
-		// accessor - getter
-			const std::string&		getType(void) const;
-
-		// accessor - setter
-			void	setType(std::string newType);
-
-		private :
-			std::string m_type;
-};
+// FUNCTIONS
+void	swap_string(char **argv);
 
 #endif
