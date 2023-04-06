@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 10:58:45 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/05 09:42:22 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/06 14:06:32 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <iostream>
 # include <string>
+# include "HumanA.hpp"
+# include "HumanB.hpp"
 
 // COLOURS CODES
 #define NC "\e[0m"

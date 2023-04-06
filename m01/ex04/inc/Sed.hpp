@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 10:58:45 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/05 13:24:21 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/06 14:08:46 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@
 #define REDB "\e[41m"
 
 // FUNCTIONS
-void	swap_string(char **argv);
+void	createFiles(char **argv);
 
 #endif
