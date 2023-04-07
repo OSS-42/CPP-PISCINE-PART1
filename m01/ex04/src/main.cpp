@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 10:57:18 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/06 16:46:28 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/07 11:00:23 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,33 +46,16 @@ void	createFiles(char **argv) {
 	
 	while (std::getline(inFile, line)) {
 		position = line.find(origineStr);
-		if (position != line.npos) {
+		while (position != line.npos) {
 			outFile << line.substr(0, position);
 			outFile << replaceStr;
 			line.erase(0, position + origineStr.length());
+			position = line.find(origineStr);
 		}
 		outFile << line << "\n";
 	}
 	return ;
-
-
-	// int	position;
-	
-	// std::getline(inFile, line);
-	// while ((position = line.find((std::string)argv[2])) != -1) {
-	// 	position = line.find(origineStr);
-	// 	while (position != -1) {
-	// 		newline = line.substr(0, position);
-	// 		outFile << newline;
-	// 		outFile << replaceStr;
-	// 		line.erase(0, position + origineStr.length());
-	// 	}
-	// 	outFile << line << "\n";
-	// 	std::getline(inFile, line);
-	// }
-	// return ;
 }
-
 
 int main(int argc, char **argv) {
 	if (argc != 4 || !argv[1] || !argv[2] || !argv[3]) {
