@@ -6,14 +6,23 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 10:58:45 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/07 11:10:02 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/07 11:28:33 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HARL_HPP
 # define HARL_HPP
 
-# include "../inc/Weapon.hpp"
+# include <iostream>
+
+// COLOURS CODES
+# define NC "\e[0m"
+# define RED "\e[0;31m"
+# define GRN "\e[0;32m"
+# define CYN "\e[0;36m"
+# define YEL "\e[0;33m"
+# define MAG "\e[0;35m"
+# define REDB "\e[41m"
 
 //Class
 class Harl {
@@ -22,12 +31,6 @@ class Harl {
 		// mandatory
 			Harl (void); 	// Constructeur
 			~Harl(void);	// Destructor
-
-		// accessor - getter
-			std::string		getName(void) const;
-
-		// accessor - setter
-			void	setName(std::string name);
 
 		// other
 			void complain(std::string level);
