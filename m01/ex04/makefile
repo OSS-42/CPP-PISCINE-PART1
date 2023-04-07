@@ -35,6 +35,7 @@ $(OBJS): $(D_OBJ)%.o : $(D_SRC)%.cpp $(HEADER)
 
 clean:
 	@$(call cleaning, $(RM) $(D_OBJ))
+	@$(call cleaning, $(RM) *.replace)
 
 fclean:	clean
 	@$(call fcleaning, $(RM) $(NAME))
