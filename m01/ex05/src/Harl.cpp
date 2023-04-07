@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 13:55:28 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/07 11:38:02 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/07 14:48:56 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,32 +20,46 @@ Harl::~Harl(void) {
 	std::cout << "Harl has been deactivated." << std::endl;
 }
 
-void complain(std::string level) {
+void Harl::complain(std::string level) {
+	// array with level name triggers
+	std::string	levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	
-}
+	// array with corresponding function calls
+	void (Harl::*response[4])(void) = {
+		&Harl::debug,
+		&Harl::info,
+		&Harl::warning,
+		&Harl::error};
 
-void	debug(void) {
-	std::cout << YEL "I love having extra bacon for my"
-		" 7XL-double-cheese-triple-pickle-special-ketchup burger."
-		" I really do !" NC << std::endl;
+	// looping through the arrays to check for correspondances
+	for (int i = 0; i < 4; i++) {
+		if (!levels[i].compare(level)) {
+			(this->*response[i])();
+			return ;
+		}
+	}
+
+	// when no correspondance is found
+	std::cout << GRN "Harl n'a rien a dire" NC << std::endl;
 	return ;
 }
 
-void	info(void) {
-	std::cout << CYN "I cannot believe adding extra bacon costs more money."
-		" You didn\'t put enough bacon in my burger !"
-		" If you did, I wouldn\'t be asking for more !" NC << std::endl;
+void	Harl::debug(void) {
+	std::cout << YEL "Osti de pourri, c'est pourri pas mal." NC << std::endl;
 	return ;
 }
 
-void	warning(void) {
-	std::cout << MAG "I think I deserve to have some extra bacon for free."
-		"I\'ve been coming for years whereas you started working here since last month." NC << std::endl;
+void	Harl::info(void) {
+	std::cout << CYN "Mais Osti de câlisse de pourri, ca ca commence a vraiment être pourri." NC << std::endl;
 	return ;
 }
 
-void	error(void) {
-	std::cout << RED "This is unacceptable !";
-	std::cout << " I want to speak to the manager now." NC << std::endl;
+void	Harl::warning(void) {
+	std::cout << MAG "Mais on m'a déja traité d'esti de pourri de tabarnac" NC << std::endl;
+	return ;
+}
+
+void	Harl::error(void) {
+	std::cout << RED "Mais on peut le conjuguer aussi. " NC << std::endl;
 	return ;
 }

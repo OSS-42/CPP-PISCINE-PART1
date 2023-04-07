@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 10:58:45 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/07 11:28:33 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/07 14:04:30 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Harl {
 			Harl (void); 	// Constructeur
 			~Harl(void);	// Destructor
 
-		// other
+		// accessor - pointer to function
 			void complain(std::string level);
 
 		private :
