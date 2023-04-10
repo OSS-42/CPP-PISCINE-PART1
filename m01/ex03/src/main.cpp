@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 14:05:58 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/10 11:28:33 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/10 13:26:31 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,7 @@ int	main( void ) {
 		Weapon club2 = Weapon("crude spiked club");
 
 		HumanB jim("Jim");
-		std::cout << "coucou #1" << std::endl;
 		jim.attack();
-		std::cout << "coucou #2" << std::endl;
 		jim.setWeapon(club2);
 		jim.attack();
 		club2.setType("sword");
