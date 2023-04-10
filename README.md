@@ -1,2 +1,2 @@
 # CPP-PISCINE
-CPP's Piscine exercies
+CPP's Piscine exercises
