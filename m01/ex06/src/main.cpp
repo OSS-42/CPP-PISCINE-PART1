@@ -5,20 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/28 10:57:18 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/10 10:21:53 by ewurstei         ###   ########.fr       */
+/*   Created: 2023/04/06 14:05:58 by ewurstei          #+#    #+#             */
+/*   Updated: 2023/04/10 10:47:31 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../inc/Zombie.hpp"
+# include "../inc/HarlFilter.hpp"
 
-int	main(void) {
-
-	Zombie	*body1 = newZombie("Bill");
-	randomChump("Boule");
-	body1->announce();
-
-	delete body1;
+int	main(int argc, char **argv) {
+	
+if (argc != 2)
+		std::cout << "Bad arguments. Retry" << std::endl;
+	else {
+		Harl pasContent;
+		pasContent.complain(argv[1]);
+	}
 	
 	return (0);
 }

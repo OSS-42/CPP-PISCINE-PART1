@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 13:55:28 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/03 16:19:11 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/10 10:58:15 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ HumanB::~HumanB(void) {
 void	HumanB::attack(void) const {
 	// <name> attacks with their <weapon type>
 	if (this->m_type->getType().length() == 0)
-		std::cout << this->getName() << " attack with their fists" << std::endl;
+		std::cout << this->getName() << " attack with their fists because he doesn't have any weapon." << std::endl;
 	else
 		std::cout << this->getName() << " attack with their " << this->m_type->getType() << std::endl;
 }

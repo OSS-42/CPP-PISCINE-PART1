@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.cpp                                           :+:      :+:    :+:   */
+/*   HarlFilter.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 13:55:28 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/10 10:04:14 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/10 10:49:20 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../inc/Harl.hpp"
+# include "../inc/HarlFilter.hpp"
 
 Harl::Harl(void) {
 	std::cout << "Harl has been activated." << std::endl;
@@ -23,24 +23,34 @@ Harl::~Harl(void) {
 void Harl::complain(std::string level) {
 	// array with level name triggers
 	std::string	levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	
-	// array with corresponding function calls
-	void (Harl::*response[4])(void) = {
-		&Harl::debug,
-		&Harl::info,
-		&Harl::warning,
-		&Harl::error};
 
 	// looping through the arrays to check for correspondances
+	int	flag = 4;
 	for (int i = 0; i < 4; i++) {
 		if (!levels[i].compare(level)) {
-			(this->*response[i])();
-			return ;
+			flag = i;
+			break ;
+		} else {
+			flag = 4;
 		}
 	}
-
-	// when no correspondance is found
-	std::cout << GRN "Harl n'a rien a dire" NC << std::endl;
+	
+	std::cout << std::endl;
+	std::cout << "#############" << " LEVEL: " << level << " #############" << std::endl;
+	switch (flag) {
+		case 0 :
+			this->debug();
+		case 1 :
+			this->info();
+		case 2 :
+			this->warning();
+		case 3 :
+			this->error();
+			break ;
+		case 4 :
+			std::cout << GRN "Harl n'a rien a dire" NC << std::endl;
+	}
+	std::cout << "###########################" << std::endl << std::endl;
 	return ;
 }
 
