@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 10:58:45 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/12 15:33:30 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/14 15:59:51 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,6 @@ class Fixed {
 		static const int	m_fracBits = 8;
 };
 
-std::ostream& operator<<(std::ostream& o, const Fixed value);
+std::ostream& operator<<(std::ostream& o, const Fixed& value);
 
 #endif
