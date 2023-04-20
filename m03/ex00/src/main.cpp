@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 10:57:18 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/19 19:40:48 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/20 10:10:45 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	main(void) {
 	ClapTrap	Marquis("le Marquis");
 	ClapTrap	Caine("Caine");
 	
+	std::cout << std::endl;
 	John.attack("Caine");
 	Caine.takeDamage(6);
 	std::cout << std::endl;

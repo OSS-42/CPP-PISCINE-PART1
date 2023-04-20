@@ -6,12 +6,13 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 10:57:18 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/20 08:57:33 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/20 13:50:06 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../inc/ClapTrap.hpp"
 # include "../inc/ScavTrap.hpp"
+# include "../inc/FlapTrap.hpp"
 
 int	main(void) {
 
@@ -58,6 +59,12 @@ int	main(void) {
 	John.takeDamage(1);
 	John.attack("Caine");
 	Marquis.beRepaired(5);
+
+	FlapTrap	Chuck("Chuck Norris");
+	Chuck.attack("The Table");
+	Table.takeDamage(70);
+	Chuck.beRepaired(70);
+	std::cout << std::endl;
 	
 	return (0);
 }
