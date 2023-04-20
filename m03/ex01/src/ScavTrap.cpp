@@ -6,21 +6,30 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 19:42:34 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/19 20:39:42 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/19 21:59:26 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../inc/ScavTrap.hpp"
+# include "../inc/ClapTrap.hpp"
 
 // -------------- CANNON -----------------
 // default 
-ScavTrap::ScavTrap (void) : m_name ("default"), m_HP(100), m_MP(50), m_AD(20) {
+ScavTrap::ScavTrap (void) {
+	m_name = "default";
+	m_HP = 100;
+	m_MP = 50;
+	m_AD = 20; 
 	std::cout << CYN "ScavTrap " << m_name << " is in da House." << std::endl;
 	return ;
 }
 
 // constructor
-ScavTrap::ScavTrap (std::string name) : m_name (name), m_HP(100), m_MP(50), m_AD(20) {
+ScavTrap::ScavTrap (std::string name) {
+	m_name = name;
+	m_HP = 100;
+	m_MP = 50;
+	m_AD = 20;
 	std::cout << CYN "ScavTrap " << m_name << " is in da House." << std::endl;
 	return ;
 }
@@ -54,6 +63,6 @@ ScavTrap& ScavTrap::operator=(ScavTrap const& other) {
 
 // ------------ MEMBER FUNCTIONS -------------
 void	ScavTrap::guardGate() {
-	std::cout << "SCAVTRAP INTO " << RED "GATEKEEPER" NC << "MODE" << std::endl;
+	std::cout << "SCAVTRAP INTO " << RED "GATEKEEPER" NC << " MODE" << std::endl;
 	return ;
 }

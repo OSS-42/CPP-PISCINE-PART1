@@ -12,12 +12,14 @@ RM = rm -rf
 #------------------------------------------------------------------------------#
 #							SOURCES & DIRECTORIES							   #
 #------------------------------------------------------------------------------#
-HEADER = inc/ClapTrap.hpp 
+HEADER = 	inc/ClapTrap.hpp \
+			inc/ScavTrap.hpp
 D_SRC = src/
 D_OBJ = obj/
 OBJS = $(patsubst $(D_SRC)%.cpp,$(D_OBJ)%.o,$(SRCS))
 SRCS = 	src/main.cpp \
-		src/ClapTrap.cpp
+		src/ClapTrap.cpp \
+		src/ScavTrap.cpp
 
 #------------------------------------------------------------------------------#
 #									 RULES									   #
