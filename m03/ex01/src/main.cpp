@@ -6,28 +6,36 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 10:57:18 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/19 17:06:53 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/19 19:57:46 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../inc/ClapTrap.hpp"
+# include "../inc/ScavTrap.hpp"
 
 int	main(void) {
 
 	ClapTrap	John("John Wick");
-	ClapTrap	Marquis("le Marquis");
+	ClapTrap	Marquis("Le Marquis");
 	ClapTrap	Caine("Caine");
+	ScavTrap	Table("The Table");
 	
 	John.attack("Caine");
 	Caine.takeDamage(6);
 	std::cout << std::endl;
 	
 	Caine.attack("John Wick");
+	std::cout << std::endl;
 	John.takeDamage(-6);
+	std::cout << std::endl;
+	John.takeDamage(7);
 	std::cout << std::endl;
 	
 	John.beRepaired(1);
+	std::cout << std::endl;
 	Caine.beRepaired(-9);
+	std::cout << std::endl;
+	Caine.beRepaired(3);
 	std::cout << std::endl;
 	
 	Caine.attack("John Wick");

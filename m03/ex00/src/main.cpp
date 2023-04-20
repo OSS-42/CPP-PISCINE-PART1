@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 10:57:18 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/19 17:06:53 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/19 19:40:48 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,17 @@ int	main(void) {
 	std::cout << std::endl;
 	
 	Caine.attack("John Wick");
+	std::cout << std::endl;
 	John.takeDamage(-6);
+	std::cout << std::endl;
+	John.takeDamage(7);
 	std::cout << std::endl;
 	
 	John.beRepaired(1);
+	std::cout << std::endl;
 	Caine.beRepaired(-9);
+	std::cout << std::endl;
+	Caine.beRepaired(3);
 	std::cout << std::endl;
 	
 	Caine.attack("John Wick");

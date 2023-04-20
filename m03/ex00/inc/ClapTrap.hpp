@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 10:58:45 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/19 16:21:48 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/19 20:26:39 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,18 @@ class ClapTrap {
 
 		ClapTrap& operator=(ClapTrap const& other); //operator overload
 		
-		std::string getName(void) const;
-		void setName(std::string newName);
+		std::string		getName(void) const;
+		unsigned int	getHP(void) const;
+		unsigned int	getMP(void) const;
+		unsigned int	getAD(void) const;
+		void			setName(std::string newName);
+		void			setHP(unsigned int newHP);
+		void			setMP(unsigned int newMP);
+		void			setAD(unsigned int newAD);
 
-		void	attack(const std::string& target);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
+		void			attack(const std::string& target);
+		void			takeDamage(unsigned int amount);
+		void			beRepaired(unsigned int amount);
 
 	private :
 		

@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 14:50:35 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/19 17:41:10 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/19 20:33:03 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,46 +52,92 @@ std::string ClapTrap::getName(void) const {
 	return (this->m_name);
 }
 
+unsigned int ClapTrap::getHP(void) const {
+	return (this->m_HP);
+}
+
+unsigned int ClapTrap::getMP(void) const {
+	return (this->m_MP);
+}
+
+unsigned int ClapTrap::getAD(void) const {
+	return (this->m_AD);
+}
+
 // setter
-void ClapTrap::setName(std::string newName){
+void ClapTrap::setName(std::string newName) {
 	this->m_name = newName;
+	return ;
+}
+
+void ClapTrap::setHP(unsigned int newHP) {
+	this->m_HP = newHP;
+	return ;
+}
+
+void ClapTrap::setMP(unsigned int newMP) {
+	this->m_MP = newMP;
+	return ;
+}
+
+void ClapTrap::setAD(unsigned int newAD) {
+	this->m_AD = newAD;
 	return ;
 }
 
 // --------------- MEMBER FUNCTIONS ---------------
 void	ClapTrap::attack(const std::string& target) {
-	this->m_MP--;
-	if (m_MP == 0) {
-		std::cout << "ClapTrap " << m_name << " doesn't have Energy points anymore. Cannot attack\n" << std::endl;
+	if (this->getMP() == 0) {
+		std::cout << "ClapTrap " << this->getName()
+			<< " doesn't have Energy points anymore. Cannot attack\n" << std::endl;
 		return ;
-	} else if (m_HP == 0) {
-		std::cout << "ClapTrap " << m_name << " doesn't have Hits points anymore. ClapTrap is dead.\n"<< std::endl; 
+	} else if (this->getHP() == 0) {
+		std::cout << "ClapTrap " << this->getName()
+			<< " doesn't have Hits points anymore. ClapTrap is dead.\n"<< std::endl; 
 		return ;
 	}
-	std::cout << YEL "ClapTrap " << m_name << " attacks " << target << ", causing " << m_AD << " points of damage!" NC << std::endl;
-	std::cout << "ClapTrap " << m_name << " has " << m_MP << " Energy points left." << std::endl;
+	this->setMP(this->getMP() - 1);
+	std::cout << YEL "ClapTrap " << this->getName() << " attacks " << target
+		<< ", causing " << this->getAD() << " points of damage!" NC << std::endl;
+
+	std::cout << "ClapTrap " << this->getName() << " has " << this->getMP()
+		<< " Energy points left." << std::endl;
 }
+
 
 void	ClapTrap::takeDamage(unsigned int amount) {
-	this->m_HP -= amount;
-	std::cout << MAG "ClapTrap " << m_name << " took " << amount << " damages" NC << std::endl;
-	std::cout << "ClapTrap " << m_name << " has " << m_HP << " Hit points left." << std::endl;
+	if ((int) amount < 0) {
+		std::cout << "Bad argument. Retry" << std::endl;
+		return ;
+	}
+	this->setHP(this->getHP() - amount);
+	std::cout << MAG "ClapTrap " << this->getName() << " took " << amount
+		<< " damages" NC << std::endl;
+
+	std::cout << "ClapTrap " << this->getName() << " has " << this->getHP()
+		<< " Hit points left." << std::endl;
 }
 
+
 void	ClapTrap::beRepaired(unsigned int amount) {
-	if (amount < 0) {
-		std::cout << RED "bad argument. Retry" NC << std::endl;
-		return;
-	}
-	if (m_MP == 0) {
-		std::cout << "ClapTrap " << m_name << " doesn't have Energy points anymore. Cannot attack\n" << std::endl;
-		return ;
-	} else if (m_HP == 0) {
-		std::cout << "ClapTrap " << m_name << " doesn't have Hits points anymore. ClapTrap is dead.\n" << std::endl; 
+	if ((int) amount < 0) {
+		std::cout << "Bad argument. Retry" << std::endl;
 		return ;
 	}
-	this->m_HP += amount;
-	this->m_MP--;
-	std::cout << GRN "ClapTrap " << m_name << " repaired itself back to " << m_HP << " points." NC << std::endl;
-	std::cout << "ClapTrap " << m_name << " has " << m_MP << " Energy points left." << std::endl;
+	if (this->getMP() == 0) {
+		std::cout << "ClapTrap " << this->getName()
+			<< " doesn't have Energy points anymore. Cannot attack\n" << std::endl;
+		return ;
+	} else if (this->getHP() == 0) {
+		std::cout << "ClapTrap " << this->getName()
+			<< " doesn't have Hits points anymore. ClapTrap is dead.\n"<< std::endl; 
+		return ;
+	}
+	this->setHP(this->getHP() + amount);
+	this->setMP(this->getMP() - 1);
+	std::cout << GRN "ClapTrap " << this->getName() << " repaired itself back to "
+		<< this->getHP() << " points." NC << std::endl;
+
+	std::cout << "ClapTrap " << this->getName() << " has " << this->getMP()
+		<< " Energy points left." << std::endl;
 }
