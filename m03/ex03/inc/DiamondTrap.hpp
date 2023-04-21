@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:07:06 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/21 11:41:29 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/21 12:14:08 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <string>
 # include "ClapTrap.hpp"
 # include "ScavTrap.hpp"
-# include "FlapTrap.hpp"
+# include "FragTrap.hpp"
 
 
 // COLOURS CODES
@@ -30,7 +30,7 @@
 # define REDB "\e[41m"
 
 // Class
-class DiamondTrap : public ScavTrap, public FlapTrap {
+class DiamondTrap : public ScavTrap, public FragTrap {
 	public :
 		DiamondTrap (void); 						// default constructor
 		DiamondTrap (std::string name);			// constructor

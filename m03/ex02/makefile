@@ -14,14 +14,14 @@ RM = rm -rf
 #------------------------------------------------------------------------------#
 HEADER = 	inc/ClapTrap.hpp \
 			inc/ScavTrap.hpp \
-			inc/FlapTrap.hpp
+			inc/FragTrap.hpp
 D_SRC = src/
 D_OBJ = obj/
 OBJS = $(patsubst $(D_SRC)%.cpp,$(D_OBJ)%.o,$(SRCS))
 SRCS = 	src/main.cpp \
 		src/ClapTrap.cpp \
 		src/ScavTrap.cpp \
-		src/FlapTrap.cpp
+		src/FragTrap.cpp
 
 #------------------------------------------------------------------------------#
 #									 RULES									   #

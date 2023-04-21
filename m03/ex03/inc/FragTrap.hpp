@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FlapTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 13:07:16 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/20 13:35:33 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/21 12:13:58 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FLAPTRAP_HPP
-# define FLAPTRAP_HPP
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
 # include <iostream>
 # include <string>
@@ -27,14 +27,14 @@
 # define REDB "\e[41m"
 
 // Class
-class FlapTrap : public ClapTrap {
+class FragTrap : virtual public ClapTrap {
 	public :
-		FlapTrap (void); 						// default constructor
-		FlapTrap (std::string name);			// constructor
-		FlapTrap (const FlapTrap& src);			//copy
-		~FlapTrap (void);						//destructor
+		FragTrap (void); 						// default constructor
+		FragTrap (std::string name);			// constructor
+		FragTrap (const FragTrap& src);			//copy
+		~FragTrap (void);						//destructor
 
-		FlapTrap& operator=(FlapTrap const& other);
+		FragTrap& operator=(FragTrap const& other);
 
 		void	highFivesGuys();
 };

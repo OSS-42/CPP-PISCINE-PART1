@@ -1,53 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FlapTrap.cpp                                       :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 13:07:37 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/21 11:27:19 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/21 12:13:13 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../inc/FlapTrap.hpp"
+# include "../inc/FragTrap.hpp"
 # include "../inc/ClapTrap.hpp"
 
 // -------------- CANNON -----------------
 // default 
-FlapTrap::FlapTrap (void) {
+FragTrap::FragTrap (void) {
 	m_name = "default";
 	m_HP = 100;
 	m_MP = 100;
 	m_AD = 30; 
-	std::cout << CYN "FlapTrap " << m_name << " appears." << std::endl;
+	std::cout << CYN "FragTrap " << m_name << " appears." NC << std::endl;
 	return ;
 }
 
 // constructor
-FlapTrap::FlapTrap (std::string name) : ClapTrap(name) {
+FragTrap::FragTrap (std::string name) : ClapTrap(name) {
 	m_name = name;
 	m_HP = 100;
 	m_MP = 100;
 	m_AD = 30;
-	std::cout << CYN "FlapTrap " << m_name << " appears." << std::endl;
+	std::cout << CYN "FragTrap " << m_name << " appears." NC << std::endl;
 	return ;
 }
 
 // copy
-FlapTrap::FlapTrap (const FlapTrap& src) {
+FragTrap::FragTrap (const FragTrap& src) {
 	std::cout << MAG "Copy Constructor called" NC << std::endl;
 	*this = src;
 	return ;
 }
 
 // destructor
-FlapTrap::~FlapTrap (void) { 
-	std::cout << RED "FlapTrap " << m_name << " left." NC << std::endl;
+FragTrap::~FragTrap (void) { 
+	std::cout << RED "FragTrap " << m_name << " left." NC << std::endl;
 	return ;
 }
 
-FlapTrap& FlapTrap::operator=(FlapTrap const& other) {
+FragTrap& FragTrap::operator=(FragTrap const& other) {
 	this->m_name = other.m_name;
 	this->m_HP = other.m_HP;
 	this->m_MP = other.m_MP;
@@ -62,7 +62,7 @@ FlapTrap& FlapTrap::operator=(FlapTrap const& other) {
 
 
 // ------------ MEMBER FUNCTIONS -------------
-void	FlapTrap::highFivesGuys() {
-	std::cout << "FlapTRAP" << m_name << " is looking for a High Five " << std::endl;
+void	FragTrap::highFivesGuys() {
+	std::cout << "FragTRAP" << m_name << " is looking for a High Five " << std::endl;
 	return ;
 }

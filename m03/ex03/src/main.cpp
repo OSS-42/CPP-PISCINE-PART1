@@ -6,13 +6,13 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 10:57:18 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/21 11:57:03 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/21 12:13:20 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../inc/ClapTrap.hpp"
 # include "../inc/ScavTrap.hpp"
-# include "../inc/FlapTrap.hpp"
+# include "../inc/FragTrap.hpp"
 # include "../inc/DiamondTrap.hpp"
 
 int	main(void) {
@@ -74,7 +74,7 @@ int	main(void) {
 	John.attack("Caine");
 	Marquis.beRepaired(5);
 
-	FlapTrap	Punisher("The Punisher");
+	FragTrap	Punisher("The Punisher");
 	std::cout << "--------------------" << std::endl;
 	std::cout << Punisher.getName() << std::endl;
 	std::cout << Punisher.getHP() << " HP" << std::endl;
