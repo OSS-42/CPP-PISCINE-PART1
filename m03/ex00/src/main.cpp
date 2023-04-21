@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 10:57:18 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/21 12:05:46 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/21 14:27:22 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int	main(void) {
 
+	std::cout << "-------------- INITIALIZATION ---------------" << std::endl;
 	ClapTrap	John("John Wick");
-	ClapTrap	Marquis("le Marquis");
 	ClapTrap	Caine("Caine");
 	
 	std::cout << std::endl;
-	std::cout << "--------------------" << std::endl;
+	std::cout << "--------------- BASE DATA ---------------" << std::endl;
 	std::cout << John.getName() << std::endl;
 	std::cout << John.getHP() << " HP" << std::endl;
 	std::cout << John.getMP() << " MP" << std::endl;
@@ -29,9 +29,28 @@ int	main(void) {
 	std::cout << Caine.getHP() << " HP" << std::endl;
 	std::cout << Caine.getMP() << " MP" << std::endl;
 	std::cout << Caine.getAD() << " AD" << std::endl;
-	std::cout << "--------------------" << std::endl;
 	
 	std::cout << std::endl;
+	std::cout << "--------------- COPY ---------------" << std::endl;
+	ClapTrap	Deadpool(Caine);
+	std::cout << std::endl;
+	std::cout << Deadpool.getName() << std::endl;
+	std::cout << Deadpool.getHP() << " HP" << std::endl;
+	std::cout << Deadpool.getMP() << " MP" << std::endl;
+	std::cout << Deadpool.getAD() << " AD" << std::endl;
+	
+	std::cout << std::endl;
+	std::cout << "--------------- OVERLOAD ---------------" << std::endl;
+	Deadpool = John;
+	std::cout << Deadpool.getName() << std::endl;
+	std::cout << Deadpool.getHP() << " HP" << std::endl;
+	std::cout << Deadpool.getMP() << " MP" << std::endl;
+	std::cout << Deadpool.getAD() << " AD" << std::endl;
+	
+	std::cout << std::endl;
+	std::cout << REDB "--------------- BASIC TESTS EX00 ---------------" NC << std::endl;
+	std::cout << std::endl;
+	
 	John.attack("Caine");
 	Caine.takeDamage(6);
 	std::cout << std::endl;
@@ -53,14 +72,8 @@ int	main(void) {
 	Caine.attack("John Wick");
 	John.takeDamage(3);
 
-	std::cout << std::endl;
-	John.attack("Le Marquis");
-	Marquis.takeDamage(10);
-	std::cout << std::endl;
-
 	John.takeDamage(1);
 	John.attack("Caine");
-	Marquis.beRepaired(5);
-	
+
 	return (0);
 }

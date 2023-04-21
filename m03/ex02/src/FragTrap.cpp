@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 13:07:37 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/21 12:12:45 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/21 14:26:04 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ FragTrap::FragTrap (void) {
 	m_HP = 100;
 	m_MP = 100;
 	m_AD = 30; 
-	std::cout << CYN "FragTrap " << m_name << " appears." << std::endl;
+	std::cout << CYN "FragTrap " << m_name << " appears." NC << std::endl;
 	return ;
 }
 
@@ -30,7 +30,7 @@ FragTrap::FragTrap (std::string name) : ClapTrap(name) {
 	m_HP = 100;
 	m_MP = 100;
 	m_AD = 30;
-	std::cout << CYN "FragTrap " << m_name << " appears." << std::endl;
+	std::cout << CYN "FragTrap " << m_name << " appears." NC << std::endl;
 	return ;
 }
 
@@ -63,6 +63,6 @@ FragTrap& FragTrap::operator=(FragTrap const& other) {
 
 // ------------ MEMBER FUNCTIONS -------------
 void	FragTrap::highFivesGuys() {
-	std::cout << "FragTRAP" << m_name << " is looking for a High Five " << std::endl;
+	std::cout << "FragTrap " << m_name << " is looking for a High Five " << std::endl;
 	return ;
 }

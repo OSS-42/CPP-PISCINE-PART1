@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:07:01 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/21 11:59:22 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/21 13:47:32 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ DiamondTrap::DiamondTrap (void) {
 }
 
 // constructor
-DiamondTrap::DiamondTrap (std::string name) : ClapTrap(name), ScavTrap(name), FlapTrap(name) {
+DiamondTrap::DiamondTrap (std::string name) : ClapTrap(name), ScavTrap(name), FragTrap(name) {
 	m_name = name;
 	ClapTrap::m_name = m_name + "_clap_name";
 	m_HP = 100;

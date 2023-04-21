@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 19:42:34 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/21 12:01:19 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/21 14:26:14 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ ScavTrap::ScavTrap (void) {
 	m_HP = 100;
 	m_MP = 50;
 	m_AD = 20; 
-	std::cout << CYN "ScavTrap " << m_name << " is in da House." << std::endl;
+	std::cout << CYN "ScavTrap " << m_name << " is in da House." NC << std::endl;
 	return ;
 }
 
@@ -30,7 +30,7 @@ ScavTrap::ScavTrap (std::string name) : ClapTrap(name) {
 	m_HP = 100;
 	m_MP = 50;
 	m_AD = 20;
-	std::cout << CYN "ScavTrap " << m_name << " is in da House." << std::endl;
+	std::cout << CYN "ScavTrap " << m_name << " is in da House." NC << std::endl;
 	return ;
 }
 
