@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 14:50:35 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/20 10:12:54 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/21 16:47:54 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,8 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 	m_HP -= amount;
 	std::cout << MAG "ClapTrap " << m_name << " took " << amount
 		<< " damages" NC << std::endl;
-
+	if (m_HP <= 0)
+		m_HP = 0;
 	std::cout << "ClapTrap " << m_name << " has " << m_HP
 		<< " Hit points left." << std::endl;
 }

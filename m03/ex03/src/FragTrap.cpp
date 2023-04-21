@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 13:07:37 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/21 12:13:13 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/21 16:48:19 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,6 @@ FragTrap& FragTrap::operator=(FragTrap const& other) {
 
 // ------------ MEMBER FUNCTIONS -------------
 void	FragTrap::highFivesGuys() {
-	std::cout << "FragTRAP" << m_name << " is looking for a High Five " << std::endl;
+	std::cout << "FragTrap " << m_name << " is looking for a High Five " << std::endl;
 	return ;
 }
