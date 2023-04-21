@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 10:57:18 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/20 08:57:33 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/21 12:07:28 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,20 @@ int	main(void) {
 	ClapTrap	Marquis("Le Marquis");
 	ClapTrap	Caine("Caine");
 	ClapTrap	Manager("The Manager");
-	
+
+	std::cout << std::endl;
+	std::cout << "--------------------" << std::endl;
+	std::cout << John.getName() << std::endl;
+	std::cout << John.getHP() << " HP" << std::endl;
+	std::cout << John.getMP() << " MP" << std::endl;
+	std::cout << John.getAD() << " AD" << std::endl;
+	std::cout << "--------------------" << std::endl;
+	std::cout << Table.getName() << std::endl;
+	std::cout << Table.getHP() << " HP" << std::endl;
+	std::cout << Table.getMP() << " MP" << std::endl;
+	std::cout << Table.getAD() << " AD" << std::endl;
+	std::cout << "--------------------" << std::endl;
+
 	std::cout << std::endl;
 	Table.attack("The Manager");
 	Manager.takeDamage(20);

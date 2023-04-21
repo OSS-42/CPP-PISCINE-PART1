@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 10:57:18 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/20 10:10:45 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/21 12:05:46 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,19 @@ int	main(void) {
 	ClapTrap	John("John Wick");
 	ClapTrap	Marquis("le Marquis");
 	ClapTrap	Caine("Caine");
+	
+	std::cout << std::endl;
+	std::cout << "--------------------" << std::endl;
+	std::cout << John.getName() << std::endl;
+	std::cout << John.getHP() << " HP" << std::endl;
+	std::cout << John.getMP() << " MP" << std::endl;
+	std::cout << John.getAD() << " AD" << std::endl;
+	std::cout << "--------------------" << std::endl;
+	std::cout << Caine.getName() << std::endl;
+	std::cout << Caine.getHP() << " HP" << std::endl;
+	std::cout << Caine.getMP() << " MP" << std::endl;
+	std::cout << Caine.getAD() << " AD" << std::endl;
+	std::cout << "--------------------" << std::endl;
 	
 	std::cout << std::endl;
 	John.attack("Caine");

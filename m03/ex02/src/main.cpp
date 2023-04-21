@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 10:57:18 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/20 13:50:06 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/21 12:08:27 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,19 @@ int	main(void) {
 	ClapTrap	Marquis("Le Marquis");
 	ClapTrap	Caine("Caine");
 	ClapTrap	Manager("The Manager");
+
+	std::cout << std::endl;
+	std::cout << "--------------------" << std::endl;
+	std::cout << John.getName() << std::endl;
+	std::cout << John.getHP() << " HP" << std::endl;
+	std::cout << John.getMP() << " MP" << std::endl;
+	std::cout << John.getAD() << " AD" << std::endl;
+	std::cout << "--------------------" << std::endl;
+	std::cout << Table.getName() << std::endl;
+	std::cout << Table.getHP() << " HP" << std::endl;
+	std::cout << Table.getMP() << " MP" << std::endl;
+	std::cout << Table.getAD() << " AD" << std::endl;
+	std::cout << "--------------------" << std::endl;
 	
 	std::cout << std::endl;
 	Table.attack("The Manager");
@@ -60,10 +73,17 @@ int	main(void) {
 	John.attack("Caine");
 	Marquis.beRepaired(5);
 
-	FlapTrap	Chuck("Chuck Norris");
-	Chuck.attack("The Table");
+	FlapTrap	Punisher("The Punisher");
+	std::cout << "--------------------" << std::endl;
+	std::cout << Punisher.getName() << std::endl;
+	std::cout << Punisher.getHP() << " HP" << std::endl;
+	std::cout << Punisher.getMP() << " MP" << std::endl;
+	std::cout << Punisher.getAD() << " AD" << std::endl;
+	std::cout << "--------------------" << std::endl;
+	std::cout << std::endl;
+	Punisher.attack("The Table");
 	Table.takeDamage(70);
-	Chuck.beRepaired(70);
+	Punisher.beRepaired(70);
 	std::cout << std::endl;
 	
 	return (0);
