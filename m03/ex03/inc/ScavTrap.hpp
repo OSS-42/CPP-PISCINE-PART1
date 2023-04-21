@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 19:42:37 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/21 12:01:51 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/21 11:46:15 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 # define REDB "\e[41m"
 
 // Class
-class ScavTrap : public ClapTrap {
+class ScavTrap : virtual public ClapTrap {
 	public :
 		ScavTrap (void); 						// default constructor
 		ScavTrap (std::string name);			// constructor
@@ -36,8 +36,8 @@ class ScavTrap : public ClapTrap {
 
 		ScavTrap& operator=(ScavTrap const& other);
 
-		void	guardGate();
 		void	attack(const std::string& target);
+		void	guardGate();
 };
 
 #endif

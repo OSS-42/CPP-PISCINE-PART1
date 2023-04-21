@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 19:42:37 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/19 20:39:57 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/21 12:01:37 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ class ScavTrap : public ClapTrap {
 		ScavTrap& operator=(ScavTrap const& other);
 
 		void	guardGate();
+		void	attack(const std::string& target);
 };
 
 #endif

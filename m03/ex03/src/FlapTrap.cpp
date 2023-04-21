@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 13:07:37 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/21 11:27:19 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/21 11:59:10 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ FlapTrap::FlapTrap (void) {
 	m_HP = 100;
 	m_MP = 100;
 	m_AD = 30; 
-	std::cout << CYN "FlapTrap " << m_name << " appears." << std::endl;
+	std::cout << CYN "FlapTrap " << m_name << " appears." NC << std::endl;
 	return ;
 }
 
@@ -30,7 +30,7 @@ FlapTrap::FlapTrap (std::string name) : ClapTrap(name) {
 	m_HP = 100;
 	m_MP = 100;
 	m_AD = 30;
-	std::cout << CYN "FlapTrap " << m_name << " appears." << std::endl;
+	std::cout << CYN "FlapTrap " << m_name << " appears." NC << std::endl;
 	return ;
 }
 

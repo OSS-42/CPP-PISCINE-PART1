@@ -1,53 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FlapTrap.cpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/20 13:07:37 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/21 11:27:19 by ewurstei         ###   ########.fr       */
+/*   Created: 2023/04/20 15:07:01 by ewurstei          #+#    #+#             */
+/*   Updated: 2023/04/21 11:59:22 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../inc/FlapTrap.hpp"
+# include "../inc/DiamondTrap.hpp"
 # include "../inc/ClapTrap.hpp"
 
 // -------------- CANNON -----------------
 // default 
-FlapTrap::FlapTrap (void) {
+DiamondTrap::DiamondTrap (void) {
 	m_name = "default";
-	m_HP = 100;
-	m_MP = 100;
-	m_AD = 30; 
-	std::cout << CYN "FlapTrap " << m_name << " appears." << std::endl;
+	std::cout << CYN "DiamondTrap " << m_name << " has shown." NC << std::endl;
 	return ;
 }
 
 // constructor
-FlapTrap::FlapTrap (std::string name) : ClapTrap(name) {
+DiamondTrap::DiamondTrap (std::string name) : ClapTrap(name), ScavTrap(name), FlapTrap(name) {
 	m_name = name;
+	ClapTrap::m_name = m_name + "_clap_name";
 	m_HP = 100;
-	m_MP = 100;
+	m_MP = 50;
 	m_AD = 30;
-	std::cout << CYN "FlapTrap " << m_name << " appears." << std::endl;
+	std::cout << CYN "DiamondTrap " << m_name << " has shown." NC << std::endl;
 	return ;
 }
 
 // copy
-FlapTrap::FlapTrap (const FlapTrap& src) {
+DiamondTrap::DiamondTrap (const DiamondTrap& src) {
 	std::cout << MAG "Copy Constructor called" NC << std::endl;
 	*this = src;
 	return ;
 }
 
 // destructor
-FlapTrap::~FlapTrap (void) { 
-	std::cout << RED "FlapTrap " << m_name << " left." NC << std::endl;
+DiamondTrap::~DiamondTrap (void) { 
+	std::cout << RED "DiamondTrap " << m_name << " has retired." NC << std::endl;
 	return ;
 }
 
-FlapTrap& FlapTrap::operator=(FlapTrap const& other) {
+DiamondTrap& DiamondTrap::operator=(DiamondTrap const& other) {
 	this->m_name = other.m_name;
 	this->m_HP = other.m_HP;
 	this->m_MP = other.m_MP;
@@ -59,10 +57,15 @@ FlapTrap& FlapTrap::operator=(FlapTrap const& other) {
 
 // setter
 
-
-
 // ------------ MEMBER FUNCTIONS -------------
-void	FlapTrap::highFivesGuys() {
-	std::cout << "FlapTRAP" << m_name << " is looking for a High Five " << std::endl;
+void	DiamondTrap::whoAmI() {
+	std::cout << "I AM " << RED;
+	std::cout << m_name;
+	std::cout << NC << std::endl;
+
+	std::cout << "HIS NAME IS : " << GRN;
+	std::cout << ClapTrap::m_name;
+	std::cout << NC << std::endl;
+	
 	return ;
 }

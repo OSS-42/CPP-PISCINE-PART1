@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/19 19:42:37 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/21 12:01:51 by ewurstei         ###   ########.fr       */
+/*   Created: 2023/04/20 15:07:06 by ewurstei          #+#    #+#             */
+/*   Updated: 2023/04/21 11:41:29 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
 
 # include <iostream>
 # include <string>
 # include "ClapTrap.hpp"
+# include "ScavTrap.hpp"
+# include "FlapTrap.hpp"
+
 
 // COLOURS CODES
 # define NC "\e[0m"
@@ -27,17 +30,20 @@
 # define REDB "\e[41m"
 
 // Class
-class ScavTrap : public ClapTrap {
+class DiamondTrap : public ScavTrap, public FlapTrap {
 	public :
-		ScavTrap (void); 						// default constructor
-		ScavTrap (std::string name);			// constructor
-		ScavTrap (const ScavTrap& src);			//copy
-		~ScavTrap (void);						//destructor
+		DiamondTrap (void); 						// default constructor
+		DiamondTrap (std::string name);			// constructor
+		DiamondTrap (const DiamondTrap& src);			//copy
+		~DiamondTrap (void);						//destructor
 
-		ScavTrap& operator=(ScavTrap const& other);
+		DiamondTrap& operator=(DiamondTrap const& other);
+		using ScavTrap::attack;
 
-		void	guardGate();
-		void	attack(const std::string& target);
+		void	whoAmI();
+
+	private :
+		std::string	m_name;
 };
 
 #endif

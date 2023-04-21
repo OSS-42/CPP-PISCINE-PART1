@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   FlapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/19 19:42:37 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/21 12:01:51 by ewurstei         ###   ########.fr       */
+/*   Created: 2023/04/20 13:07:16 by ewurstei          #+#    #+#             */
+/*   Updated: 2023/04/20 15:15:27 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef FLAPTRAP_HPP
+# define FLAPTRAP_HPP
 
 # include <iostream>
 # include <string>
@@ -27,17 +27,16 @@
 # define REDB "\e[41m"
 
 // Class
-class ScavTrap : public ClapTrap {
+class FlapTrap : virtual public ClapTrap {
 	public :
-		ScavTrap (void); 						// default constructor
-		ScavTrap (std::string name);			// constructor
-		ScavTrap (const ScavTrap& src);			//copy
-		~ScavTrap (void);						//destructor
+		FlapTrap (void); 						// default constructor
+		FlapTrap (std::string name);			// constructor
+		FlapTrap (const FlapTrap& src);			//copy
+		~FlapTrap (void);						//destructor
 
-		ScavTrap& operator=(ScavTrap const& other);
+		FlapTrap& operator=(FlapTrap const& other);
 
-		void	guardGate();
-		void	attack(const std::string& target);
+		void	highFivesGuys();
 };
 
 #endif

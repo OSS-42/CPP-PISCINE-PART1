@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 19:42:34 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/19 21:59:26 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/21 12:02:02 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ ScavTrap::ScavTrap (void) {
 }
 
 // constructor
-ScavTrap::ScavTrap (std::string name) {
+ScavTrap::ScavTrap (std::string name) : ClapTrap(name) {
 	m_name = name;
 	m_HP = 100;
 	m_MP = 50;
@@ -65,4 +65,22 @@ ScavTrap& ScavTrap::operator=(ScavTrap const& other) {
 void	ScavTrap::guardGate() {
 	std::cout << "SCAVTRAP INTO " << RED "GATEKEEPER" NC << " MODE" << std::endl;
 	return ;
+}
+
+void	ScavTrap::attack(const std::string& target) {
+	if (m_MP == 0) {
+		std::cout << "ScavTrap " << m_name
+			<< " doesn't have Energy points anymore. Cannot attack\n" << std::endl;
+		return ;
+	} else if (m_HP == 0) {
+		std::cout << "ScavTrap " << m_name
+			<< " doesn't have Hits points anymore. ScavTrap is dead.\n"<< std::endl; 
+		return ;
+	}
+	m_MP--;
+	std::cout << MAG "ScavTrap " << m_name << " attacks " << target
+		<< ", causing " << m_AD << " points of damage!" NC << std::endl;
+
+	std::cout << "ScavTrap " << m_name << " has " << m_MP
+		<< " Energy points left." << std::endl;
 }
