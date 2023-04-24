@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:07:06 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/24 08:57:17 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/24 10:52:31 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,15 @@
 # include "../inc/Animal.hpp"
 
 //class
-class Cat : virtual public Animal {
+class Cat : public Animal {
 	public:
+		Cat (void) ;
+		Cat (std::string name);
+		Cat (const Cat& other);
+		~Cat (void);
 
+		Cat& operator=(Cat const& rhs);
+		
 	protected:
 
 	private:
