@@ -6,14 +6,14 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 14:50:35 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/24 10:47:20 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/26 14:18:20 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../inc/Animal.hpp"
 
 // --------------- CANNON -----------------
-Animal::Animal (void) {
+Animal::Animal (void) : m_type("mammifere") {
 	std::cout << MAG "default constructor Animal" NC << std::endl;
 	return ;
 }

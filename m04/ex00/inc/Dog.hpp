@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 13:07:16 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/24 10:52:26 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/26 13:31:39 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class Dog : public Animal {
 	protected :
 
 	private :
+
 };
 
 #endif

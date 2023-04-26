@@ -1,71 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:07:01 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/21 13:47:32 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/26 13:36:09 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../inc/DiamondTrap.hpp"
-# include "../inc/ClapTrap.hpp"
+# include "../inc/Animal.hpp"
+# include "../inc/Cat.hpp"
 
 // -------------- CANNON -----------------
-// default 
-DiamondTrap::DiamondTrap (void) {
-	m_name = "default";
-	std::cout << CYN "DiamondTrap " << m_name << " has shown." NC << std::endl;
+Cat::Cat (void) {
+	std::cout << MAG "Cat default" NC << std::endl;
 	return ;
 }
 
-// constructor
-DiamondTrap::DiamondTrap (std::string name) : ClapTrap(name), ScavTrap(name), FragTrap(name) {
-	m_name = name;
-	ClapTrap::m_name = m_name + "_clap_name";
-	m_HP = 100;
-	m_MP = 50;
-	m_AD = 30;
-	std::cout << CYN "DiamondTrap " << m_name << " has shown." NC << std::endl;
+Cat::Cat (std::string type) : Animal(type) {
+	std::cout << GRN "Cat is of type " << m_type << std::endl;
 	return ;
 }
 
-// copy
-DiamondTrap::DiamondTrap (const DiamondTrap& src) {
-	std::cout << MAG "Copy Constructor called" NC << std::endl;
-	*this = src;
+Cat::Cat (const Cat& other) {
+	*this = other ;
 	return ;
 }
 
-// destructor
-DiamondTrap::~DiamondTrap (void) { 
-	std::cout << RED "DiamondTrap " << m_name << " has retired." NC << std::endl;
-	return ;
+Cat& Cat::operator= (Cat const& rhs) {
+	this->m_type = rhs.m_type;
+	return  *this;
 }
 
-DiamondTrap& DiamondTrap::operator=(DiamondTrap const& other) {
-	this->m_name = other.m_name;
-	this->m_HP = other.m_HP;
-	this->m_MP = other.m_MP;
-	this->m_AD = other.m_AD;
-	return *this;
-}
-
-// getter
-
-// setter
-
-// ------------ MEMBER FUNCTIONS -------------
-void	DiamondTrap::whoAmI() {
-	std::cout << "I AM " << RED;
-	std::cout << m_name;
-	std::cout << NC << std::endl;
-
-	std::cout << "HIS NAME IS : " << GRN;
-	std::cout << ClapTrap::m_name;
-	std::cout << NC << std::endl;
-	
+Cat::~Cat (void) {
+	std::cout << "Cat has disappeared" << std::endl;
 	return ;
 }

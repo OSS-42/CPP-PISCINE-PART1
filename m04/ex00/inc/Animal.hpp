@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 10:58:45 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/24 10:46:29 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/26 13:31:56 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@
 # define MAG "\e[0;35m"
 # define REDB "\e[41m"
 
-//Class
 class Animal {
 	public :
 		Animal (void); 					// default constructor
@@ -38,11 +37,12 @@ class Animal {
 		std::string	getType(void) const ;
 
 		void makeSound (void);
-	
+
 	protected :
-		std::string	m_type
+		std::string	m_type;
 
 	private :
+
 };
 
 #endif
