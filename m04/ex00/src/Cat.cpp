@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:07:01 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/26 13:36:09 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/26 16:10:57 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # include "../inc/Cat.hpp"
 
 // -------------- CANNON -----------------
-Cat::Cat (void) {
+Cat::Cat (void) : Animal("default chat") {
 	std::cout << MAG "Cat default" NC << std::endl;
 	return ;
 }
@@ -37,4 +37,8 @@ Cat& Cat::operator= (Cat const& rhs) {
 Cat::~Cat (void) {
 	std::cout << "Cat has disappeared" << std::endl;
 	return ;
+}
+
+void Cat::makeSound (void) const {
+	std::cout << "MEaaaooow" << std::endl;
 }

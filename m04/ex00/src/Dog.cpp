@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 13:07:37 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/26 13:36:14 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/26 16:10:50 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # include "../inc/Dog.hpp"
 
 // -------------- CANNON -----------------
-Dog::Dog (void) {
+Dog::Dog (void) : Animal("default chien") {
 	std::cout << MAG "Dog default" NC << std::endl;
 	return ;
 }
@@ -39,3 +39,6 @@ Dog::~Dog (void) {
 	return ;
 }
 
+void Dog::makeSound (void) const {
+	std::cout << "OUaaf Ouaf" << std::endl;
+}

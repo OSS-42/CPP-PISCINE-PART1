@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 10:58:45 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/26 13:31:56 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/26 16:06:54 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,15 @@
 class Animal {
 	public :
 		Animal (void); 					// default constructor
-		Animal (std::string name);		// constructor
+		Animal (std::string type);		// constructor
 		Animal (const Animal& src);		// copy
-		~Animal (void);					// destructor
+		virtual ~Animal (void);					// destructor
 
 		Animal& operator=(Animal const& other); //operator overload
 
 		std::string	getType(void) const ;
 
-		void makeSound (void);
+		virtual void makeSound (void) const;
 
 	protected :
 		std::string	m_type;

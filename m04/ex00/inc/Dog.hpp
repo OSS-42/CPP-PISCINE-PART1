@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 13:07:16 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/26 13:31:39 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/26 16:03:52 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ class Dog : public Animal {
 		~Dog (void);
 
 		Dog& operator=(Dog const& rhs);
+
+		void makeSound(void) const;
 
 	protected :
 

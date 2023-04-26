@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 14:50:35 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/26 14:18:20 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/26 16:07:40 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,6 @@ std::string Animal::getType (void) const {
 	return (m_type);
 }
 
-void	Animal::makeSound(void) {
-	if (m_type == "Cat")
-		std::cout << "Miaou" << std::endl;
-	else if (m_type == "Dog")
-		std::cout << "Ouaf" << std::endl;
-	else
+void	Animal::makeSound(void) const {
 		std::cout << "il n'y a pas un bruit" << std::endl;
 }
