@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:07:01 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/26 16:10:57 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/27 09:42:38 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Cat& Cat::operator= (Cat const& rhs) {
 }
 
 Cat::~Cat (void) {
-	std::cout << "Cat has disappeared" << std::endl;
+	std::cout << RED "Cat has disappeared" NC << std::endl;
 	return ;
 }
 

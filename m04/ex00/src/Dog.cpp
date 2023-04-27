@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 13:07:37 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/26 16:10:50 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/27 09:42:31 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Dog& Dog::operator= (Dog const& rhs) {
 }
 
 Dog::~Dog (void) {
-	std::cout << "Dog has disappeared" << std::endl;
+	std::cout << RED "Dog has disappeared" NC << std::endl;
 	return ;
 }
 

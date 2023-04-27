@@ -16,7 +16,8 @@ HEADER =	inc/sed.hpp
 D_SRC = src/
 D_OBJ = obj/
 OBJS = $(patsubst $(D_SRC)%.cpp,$(D_OBJ)%.o,$(SRCS))
-SRCS = 	src/main.cpp 
+SRCS = 	src/main.cpp \
+		src/Sed.cpp
 
 #------------------------------------------------------------------------------#
 #									 RULES									   #
