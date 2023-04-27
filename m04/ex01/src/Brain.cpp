@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 11:06:10 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/27 11:36:41 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/27 16:50:48 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ Brain::Brain (void) {
 
 Brain::Brain (std::string ideas) {
 	std::cout << GRN "Active Brain Created" << std::endl;
-	Brain* allIdeas = new Brain[100];
-
 
 for(int i = 0; i < N; i++) {
 			Horde[i].setName(name);

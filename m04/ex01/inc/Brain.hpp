@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 11:05:57 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/27 11:23:46 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/27 16:51:28 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class Brain {
 		~Brain (void);
 	
 	protected :
+		std::string ideas[100];
 
 	private :
 

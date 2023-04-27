@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 10:57:18 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/27 11:04:02 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/27 16:15:44 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include "../inc/Dog.hpp"
 # include "../inc/WrongAnimal.hpp"
 # include "../inc/WrongCat.hpp"
+# include "../inc/Brain.hpp"
 
 int	main(void) {
 
