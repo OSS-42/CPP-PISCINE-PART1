@@ -14,14 +14,18 @@ RM = rm -rf
 #------------------------------------------------------------------------------#
 HEADER = 	inc/Animal.hpp \
 			inc/Cat.hpp \
-			inc/Dog.hpp
+			inc/Dog.hpp \
+			inc/WrongAnimal.hpp \
+			inc/WrongCat.hpp
 D_SRC = src/
 D_OBJ = obj/
 OBJS = $(patsubst $(D_SRC)%.cpp,$(D_OBJ)%.o,$(SRCS))
 SRCS = 	src/main.cpp \
 		src/Animal.cpp \
 		src/Cat.cpp \
-		src/Dog.cpp
+		src/Dog.cpp \
+		src/WrongAnimal.cpp \
+		src/WrongCat.cpp
 
 #------------------------------------------------------------------------------#
 #									 RULES									   #
