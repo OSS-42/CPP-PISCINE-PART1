@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 13:07:37 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/27 13:57:07 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/28 14:27:40 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 // -------------- CANNON -----------------
 Dog::Dog (void) : Animal("default chien") {
-	std::cout << MAG "Dog default" NC << std::endl;
+	std::cout << MAG "Dog default, no brain" NC << std::endl;
 	return ;
 }
 
@@ -30,7 +30,9 @@ Dog::Dog (const Dog& other) {
 	return ;
 }
 
-Dog& Dog::operator= (Dog const& rhs) {
+Dog& Dog::operator= (const Dog& rhs) {
+	delete m_dogIdea;
+	this->m_dogIdea = new Brain(*rhs.m_dogIdea);
 	this->m_type = rhs.m_type;
 	return  *this;
 }

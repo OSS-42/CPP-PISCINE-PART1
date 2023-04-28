@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:07:06 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/27 13:58:15 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/28 13:37:46 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Cat : public Animal {
 		Cat (const Cat& other);
 		~Cat (void);
 
-		Cat& operator=(Cat const& rhs);
+		Cat& operator=(const Cat& rhs);
 
 		void makeSound (void) const;
 
