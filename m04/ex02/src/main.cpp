@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/20 15:07:06 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/28 15:42:29 by ewurstei         ###   ########.fr       */
+/*   Created: 2023/03/28 10:57:18 by ewurstei          #+#    #+#             */
+/*   Updated: 2023/04/28 17:37:05 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
-
 # include "../inc/Animal.hpp"
-# include "../inc/Brain.hpp"
+# include "../inc/Cat.hpp"
+# include "../inc/Dog.hpp"
+# include "../inc/WrongAnimal.hpp"
+# include "../inc/WrongCat.hpp"
 
-class Cat : public Animal {
-	public:
-		Cat (void) ;
-		Cat (std::string name);
-		Cat (const Cat& other);
-		~Cat (void);
+using	std::cout;
+using	std::endl;
 
-		Cat& operator=(const Cat& rhs);
+int	main(void) {
+	cout << "Creation Cat & Dog\n" << endl;
+	const AAnimal*	j = new Dog();
+	const AAnimal*	k = new Cat();
+	cout << endl;
 
-		void	makeSound (void) const;
-		void	getBrain(void) const;
+	j->makeSound();
+	k->makeSound();
+	cout << endl;
 
-	protected :
+	delete j;
+	delete k; 
 
-	private :
-		Brain* m_catBrain;
-};
-
-#endif
+	return 0;
+}

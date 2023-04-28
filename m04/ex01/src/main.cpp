@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 10:57:18 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/28 13:37:13 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/28 17:12:48 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,24 @@ int	main(void) {
 	for (int i = 5; i < 10; i++) {
 		Zoo[i] = new Cat();
 	}
+	
+	cout << "\n------ Deep Copy test ------" << endl;
+	Cat		Chat1;
+	Cat		Chat2(Chat1);
+	Cat		Chat3 = Chat1;
+
+	cout << "\nBrain addresses " << endl;
+	cout << "Chat1 = ";
+	Chat1.getBrain();
+	cout << "Chat2 = ";
+	Chat2.getBrain();
+	cout << "Chat3 = ";
+	Chat3.getBrain();
+	cout << endl;
+	
+	// cout << "Chat1 = " << Chat1->getBrain() << endl;
+	// cout << "Chat2 = " << Chat2->getBrain() << endl;
+	// cout << "Chat3 = " << Chat3->getBrain() << endl;
 
 	for (int i = 0; i < 10; i++) {
 		delete Zoo[i];
@@ -42,16 +60,3 @@ int	main(void) {
 
 	return 0;
 }
-
-// Shallow vs Deep Copy
-// Normal copy is shallow :
-// Cat1 will have Brain1
-// if Cat2 = Cat1, they will share the same Brain1
-// when deleting, Cat1 and Brain1 will be deleted,
-// but when deleting Cat2, you will have a double free
-// warning as Brain1 is no longer.
-// So Cat1-Brain1 and Cat2-Brain2 is deep copy.
-// to do that in operator overload :
-// delete the previous Brain, 
-// Brain = new Brain(other.Brain)
-// and in copy constructor, this = other.

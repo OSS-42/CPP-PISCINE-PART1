@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:07:06 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/28 15:42:29 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/28 17:23:21 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "../inc/Animal.hpp"
 # include "../inc/Brain.hpp"
 
-class Cat : public Animal {
+class Cat : public AAnimal {
 	public:
 		Cat (void) ;
 		Cat (std::string name);

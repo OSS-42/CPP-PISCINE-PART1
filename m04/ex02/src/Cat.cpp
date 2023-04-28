@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:07:01 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/28 17:05:04 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/28 17:23:27 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 # include "../inc/Cat.hpp"
 
 // -------------- CANNON -----------------
-Cat::Cat (void) : Animal("default chat") {
+Cat::Cat (void) : AAnimal("default chat") {
 	std::cout << MAG "Default Cat" NC << std::endl;
 	m_catBrain = new Brain();
 	return ;
 }
 
-Cat::Cat (std::string type) : Animal(type) {
+Cat::Cat (std::string type) : AAnimal(type) {
 	std::cout << GRN "Cat is of type " << m_type << std::endl;
 	m_catBrain = new Brain();
 	return ;
 }
 
-Cat::Cat (const Cat& other) : Animal(other), m_catBrain(new Brain(*other.m_catBrain)) {
+Cat::Cat (const Cat& other) : AAnimal(other), m_catBrain(new Brain(*other.m_catBrain)) {
 	*this = other;
 	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 13:07:37 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/28 17:05:13 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/04/28 17:20:56 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 # include "../inc/Dog.hpp"
 
 // -------------- CANNON -----------------
-Dog::Dog (void) : Animal("default chien") {
+Dog::Dog (void) : AAnimal("default chien") {
 	std::cout << MAG "Default Dog" NC << std::endl;
 	m_dogBrain = new Brain();
 	return ;
 }
 
-Dog::Dog (std::string type) : Animal(type) {
+Dog::Dog (std::string type) : AAnimal(type) {
 	std::cout << GRN "Dog is of type " << m_type << std::endl;
 	m_dogBrain = new Brain();
 	return ;
 }
 
-Dog::Dog (const Dog& other) : Animal(other), m_dogBrain(new Brain(*other.m_dogBrain)) {
+Dog::Dog (const Dog& other) : AAnimal(other), m_dogBrain(new Brain(*other.m_dogBrain)) {
 	*this = other ;
 	return ;
 }

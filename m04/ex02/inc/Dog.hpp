@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/20 15:07:06 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/28 15:42:29 by ewurstei         ###   ########.fr       */
+/*   Created: 2023/04/20 13:07:16 by ewurstei          #+#    #+#             */
+/*   Updated: 2023/04/28 17:20:49 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
 # include "../inc/Animal.hpp"
 # include "../inc/Brain.hpp"
 
-class Cat : public Animal {
-	public:
-		Cat (void) ;
-		Cat (std::string name);
-		Cat (const Cat& other);
-		~Cat (void);
+class Dog : public AAnimal {
+	public :
+		Dog (void);
+		Dog (std::string type);
+		Dog (const Dog& other);
+		~Dog (void);
 
-		Cat& operator=(const Cat& rhs);
+		Dog& operator=(const Dog& rhs);
 
-		void	makeSound (void) const;
+		void	makeSound(void) const;
 		void	getBrain(void) const;
 
 	protected :
 
 	private :
-		Brain* m_catBrain;
+		Brain* m_dogBrain;
 };
 
 #endif
