@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 14:22:41 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/05/01 15:17:41 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/05/01 16:18:37 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,15 @@ void Character::unequip(int idx) {
 }
 
 void Character::use(int idx, ICharacter& target) {
-	
+	if (m_inventory[idx] == NULL) {
+		std::cout << RED "Inventory slot is empty" NC << std::endl;
+		return ;
+	} else {
+		m_inventory[idx].use(target);
+		m_inventory[idx] = NULL;
+		m_index--;
+		return ;
+	}
 }
 
 int	Character::checkInventoryEmpty (void) const {
