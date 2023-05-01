@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 17:59:37 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/28 18:04:27 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/05/01 11:52:12 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <iostream>
 # include <string>
+# include "MateriaSource.hpp"
+# include "Character.hpp"
 
 // COLOURS CODES
 # define NC "\e[0m"
@@ -27,18 +29,19 @@
 
 class AMateria {
 	protected:
+		std::string	m_type;
 
 	public :
 		AMateria ();
-		AMateria (std::string cont& type);
+		AMateria (std::string const& type);
 		AMateria (const AMateria& other);
-		operator= (const AMateria& rhs);
-		~AMateria ();
+		AMateria& operator= (const AMateria& rhs);
+		virtual ~AMateria ();
 
 		std::string const& getType() const; //Returns the materia type
 		
 		virtual AMateria* clone () const = 0;
-		virutal void use(ICharacter& target);
-}
+		virtual void use(ICharacter& target);
+};
 
 #endif
