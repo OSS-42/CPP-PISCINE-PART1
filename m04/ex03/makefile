@@ -17,13 +17,14 @@ HEADER =	inc/Materia.hpp \
 			inc/MateriaSource.hpp \
 			inc/Cure.hpp \
 			inc/Ice.hpp
-D_SRC =		src/main.cpp \
-			src/Materia.cpp \
-			src/Cure.cpp \
-			src/Ice.cpp
+D_SRC =		src/
 D_OBJ = obj/
 OBJS = $(patsubst $(D_SRC)%.cpp,$(D_OBJ)%.o,$(SRCS))
-SRCS = 	src/main.cpp 
+SRCS = 	src/main.cpp \
+		src/Materia.cpp \
+		src/Character.cpp \
+		src/Cure.cpp \
+		src/Ice.cpp
 
 #------------------------------------------------------------------------------#
 #									 RULES									   #

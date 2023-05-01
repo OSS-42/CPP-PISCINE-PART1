@@ -6,11 +6,15 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 10:57:18 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/28 17:38:45 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/05/01 14:06:08 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../inc/Animal.hpp"
+# include "../inc/Materia.hpp"
+# include "../inc/MateriaSource.hpp"
+# include "../inc/Character.hpp"
+# include "../inc/Ice.hpp"
+# include "../inc/Cure.hpp"
 
 int	main(void) {
 	IMateriaSource* src = new MateriaSource();

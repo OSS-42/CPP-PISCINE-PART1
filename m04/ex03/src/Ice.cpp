@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 09:09:53 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/05/01 12:07:33 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/05/01 14:56:06 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,8 @@ Ice::~Ice (void) {
 
 void	use(ICharacter& target) {
 	std::cout << CYN "* shoots an ice bolt at " << target.getName() << " *" NC << std::endl;
+}
+
+Ice* Ice::clone(void) const {
+	return (new Ice);
 }

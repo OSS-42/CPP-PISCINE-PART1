@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 09:09:33 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/05/01 12:07:43 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/05/01 14:55:48 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,8 @@ Cure::~Cure (void) {
 
 void	use(ICharacter& target) {
 	std::cout << GRN "* heals " << target.getName() << "'s wounds *" NC << std::endl;
+}
+
+Cure* Cure::clone(void) const {
+	return (new Cure);
 }
