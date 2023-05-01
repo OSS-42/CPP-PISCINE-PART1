@@ -2,7 +2,7 @@
 #								   VARIABLES								   #
 #------------------------------------------------------------------------------#
 # Filename
-NAME = poly
+NAME = materia
 
 # Compiler and flags
 CC = c++
@@ -12,8 +12,15 @@ RM = rm -rf
 #------------------------------------------------------------------------------#
 #							SOURCES & DIRECTORIES							   #
 #------------------------------------------------------------------------------#
-HEADER = 	inc/Animal.hpp
-D_SRC = src/
+HEADER =	inc/Materia.hpp \
+			inc/Character.hpp \
+			inc/MateriaSource.hpp \
+			inc/Cure.hpp \
+			inc/Ice.hpp
+D_SRC =		src/main.cpp \
+			src/Materia.cpp \
+			src/Cure.cpp \
+			src/Ice.cpp
 D_OBJ = obj/
 OBJS = $(patsubst $(D_SRC)%.cpp,$(D_OBJ)%.o,$(SRCS))
 SRCS = 	src/main.cpp 
