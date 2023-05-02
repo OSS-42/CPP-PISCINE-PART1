@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 10:18:03 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/05/01 15:17:48 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/05/02 14:22:45 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ class ICharacter
 
 class Character : public ICharacter {
 	public :
-		Character (void);
+		// Character (void);
+		Character (std::string name);
 		Character (const Character& other);
 		Character&	operator= (const Character& rhs);
 		~Character (void);
@@ -39,14 +40,16 @@ class Character : public ICharacter {
 		virtual void unequip(int idx);
 		virtual void use(int idx, ICharacter& target);
 
-		int	checkInventoryEmpty(void) const;
+		int		checkInventoryEmpty(void) const;
+		void	toDropInventory(AMateria* m);
 
 	protected :
 		AMateria*	m_inventory[4];
+		AMateria*	m_dropInventory[128];
 
 	private :
 		std::string	m_name;
-		int			m_index;
+		int			m_idxInventory;
 	
 };
 

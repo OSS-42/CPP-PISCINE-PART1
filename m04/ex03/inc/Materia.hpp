@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 17:59:37 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/05/01 14:53:26 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/05/02 14:11:26 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ class AMateria {
 		std::string const& getType() const; //Returns the materia type
 		
 		virtual AMateria* clone () const = 0;
-		virtual void use(ICharacter& target);
+			
 };
 
 #endif
