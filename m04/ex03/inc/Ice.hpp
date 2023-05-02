@@ -6,16 +6,16 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 10:12:00 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/05/01 14:12:06 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/05/02 15:42:13 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICE_HPP
 # define ICE_HPP
 
-# include "../inc/Materia.hpp"
-# include "../inc/MateriaSource.hpp"
-# include "../inc/Character.hpp"
+# include "Materia.hpp"
+# include "MateriaSource.hpp"
+# include "Character.hpp"
 
 class Ice : public AMateria {
 	public :

@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 14:22:41 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/05/02 14:23:25 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/05/02 15:56:18 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,9 @@ Character&	Character::operator= (const Character& rhs) {
 }
 
 Character::~Character (void) {
-	std::cout << RED "Character left" NC << std::endl;
+	std::cout << RED "Character left, and the inventories too." NC << std::endl;
+	delete m_inventory;
+	delete m_dropInventory;
 }
 
 std::string const & Character::getName() const {

@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 10:18:03 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/05/02 14:22:45 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/05/02 15:38:02 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <iostream>
 # include <string>
-# include "../inc/Materia.hpp"
+# include "Materia.hpp"
 
 class ICharacter
 {

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   materia.cpp                                        :+:      :+:    :+:   */
+/*   Materia.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 18:00:26 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/05/01 12:01:15 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/05/02 15:53:40 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,8 @@ AMateria::~AMateria () {
 //Returns the materia type
 std::string const& AMateria::getType() const {
 	return (m_type);
+}
+
+void AMateria::use(ICharacter& target) {
+	std::cout << "Not able to use anything" << std::endl;
 }
