@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 10:57:18 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/05/03 17:19:09 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/05/03 17:51:29 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int	main(void) {
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
+	tmp = src->createMateria("fire");
+	// me->equip(tmp);
 	std::cout << std::endl;
 
 	ICharacter* bob = new Character("bob");
@@ -45,10 +47,6 @@ int	main(void) {
 	src->learnMateria(new Cure());
 	std::cout << std::endl;
 
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
@@ -78,10 +76,20 @@ int	main(void) {
 	Character *newbob = new Character("newbob");
 	std::cout << std::endl;
 
+	std::cout << "equip newbob" << std::endl;
 	tmp = src->createMateria("ice");
 	newbob->equip(tmp);
 	tmp = src->createMateria("cure");
 	newbob->equip(tmp);
+	std::cout << std::endl;
+	
+	std::cout << "equip newme" << std::endl;
+	tmp = src->createMateria("cure");
+	newme->equip(tmp);
+	tmp = src->createMateria("ice");
+	newme->equip(tmp);
+	std::cout << std::endl;
+	newme->use(0, *me);
 	std::cout << std::endl;
 
 	*newme = *newbob;
@@ -92,6 +100,7 @@ int	main(void) {
 	me->use(1, *bob);
 	std::cout << std::endl;
 
+	newme->use(0, *bob);
 	newbob->use(0, *me);
 	newbob->use(1, *me);
 	std::cout << std::endl;

@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 16:00:01 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/05/03 17:16:10 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/05/03 17:56:57 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,14 @@ void MateriaSource::learnMateria(AMateria* m) {
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type) {
-	for (int slot = 0; slot < 4; slot++) {
-		if (type.compare(m_sourceInventory[slot]->getType()) == 0)
-			return (m_sourceInventory[slot]->clone());
+	if (type != "ice" && type != "cure") {
+		std::cout << RED "Materia Inconnue" NC << std::endl;
+		return 0;
+	} else {
+		for (int slot = 0; slot < 4; slot++) {
+			if (type.compare(m_sourceInventory[slot]->getType()) == 0)
+				return (m_sourceInventory[slot]->clone());
+		}
 	}
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 10:57:18 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/05/03 14:51:30 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/05/03 17:31:52 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ using	std::cout;
 using	std::endl;
 
 int	main(void) {
+	
 	cout << "Creation Cat & Dog\n" << endl;
 	const Animal*	j = new Dog();
 	const Animal*	k = new Cat();
@@ -61,6 +62,6 @@ int	main(void) {
 	for (int i = 0; i < 10; i++) {
 		delete Zoo[i];
 	}
-
+	
 	return 0;
 }
