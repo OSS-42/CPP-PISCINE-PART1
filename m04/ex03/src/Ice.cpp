@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 09:09:53 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/05/02 15:54:56 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/05/03 15:46:47 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Ice::Ice (const Ice& other) {
 Ice& Ice::operator= (const Ice& rhs) {
 	if (this == &rhs)
 		return *this;
-	return (*this);
+	return (*this); 
 }
 
 Ice::~Ice (void) {

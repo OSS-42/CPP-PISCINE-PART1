@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 14:22:41 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/05/02 15:56:18 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/05/03 17:16:30 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,24 +31,49 @@ Character::Character (const Character& other) {
 }
 
 Character&	Character::operator= (const Character& rhs) {
+	std::cout << YEL "Copy Character" NC << std::endl;
 	if (this == &rhs)
 		return (*this);
 	this->m_name = rhs.m_name;
+
+	for (int i = 0; i < 4; i++) {
+		delete m_inventory[i];
+		m_inventory[i] = NULL;
+	}
+
 	this->m_idxInventory = rhs.m_idxInventory;
-
-	delete m_inventory;
-	delete m_dropInventory;
-
-	*this->m_inventory = *rhs.m_inventory;
-	*this->m_dropInventory = *rhs.m_dropInventory;
+	m_idxInventory = 0;
 	
+	for (int i = 0; i < 4; i++) {
+		if (rhs.m_inventory[i])
+			this->m_inventory[i] = rhs.m_inventory[i]->clone();
+	}
+
+	// for (int i = 0; i < 128; i++) {
+	// 	delete m_dropInventory[i];
+	// 	m_dropInventory[i] = NULL;
+	// }
+
+	// for (int i = 0; i < 128; i++) {
+	// 	if (rhs.m_dropInventory[i])
+	// 		this->m_dropInventory[i] = rhs.m_dropInventory[i];
+	// }
+
 	return (*this);
 }
 
 Character::~Character (void) {
 	std::cout << RED "Character left, and the inventories too." NC << std::endl;
-	delete m_inventory;
-	delete m_dropInventory;
+	for (int i = 0; i < 4; i++) {
+		delete m_inventory[i];
+		m_inventory[i] = NULL;
+	}
+	m_idxInventory = 0;
+
+	for (int i = 0; i < 128; i++) {
+		delete m_dropInventory[i];
+		m_dropInventory[i] = NULL;
+	}
 }
 
 std::string const & Character::getName() const {
@@ -59,11 +84,12 @@ void Character::equip(AMateria* m) {
 	for (int slot = 0; slot < 4; slot++) {
 		if (m_inventory[slot] == NULL) {
 			m_inventory[slot] = m;
-			std::cout << GRN "Materia added to inventory at spot #" << m_idxInventory << NC << std::endl;
+			std::cout << GRN "Materia added to Character inventory at spot #" << slot << NC << std::endl;
 			++m_idxInventory;
 			return ;
 		}
 	}
+	delete m;
 	std::cout << MAG "Inventory full" NC << std::endl;
 	return ;
 }
@@ -85,8 +111,6 @@ void Character::use(int idx, ICharacter& target) {
 		return ;
 	} else {
 		m_inventory[idx]->use(target);
-		m_inventory[idx] = NULL;
-		m_idxInventory--;
 		return ;
 	}
 }

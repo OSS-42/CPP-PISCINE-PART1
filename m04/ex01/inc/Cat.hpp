@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:07:06 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/28 15:42:29 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/05/03 14:50:26 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Cat : public Animal {
 		Cat& operator=(const Cat& rhs);
 
 		void	makeSound (void) const;
-		void	getBrain(void) const;
+		Brain*	getBrain(void) const;
 
 	protected :
 

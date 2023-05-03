@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 13:07:37 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/28 17:05:13 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/05/03 14:58:45 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ Dog::Dog (std::string type) : Animal(type) {
 }
 
 Dog::Dog (const Dog& other) : Animal(other), m_dogBrain(new Brain(*other.m_dogBrain)) {
+	std::cout << YEL "Copydog" NC << std::endl;
 	*this = other ;
 	return ;
 }
@@ -34,6 +35,7 @@ Dog::Dog (const Dog& other) : Animal(other), m_dogBrain(new Brain(*other.m_dogBr
 Dog& Dog::operator= (const Dog& rhs) {
 	if (this == &rhs)
 		return *this;
+	this->m_type = rhs.m_type;
 	*this->m_dogBrain = *rhs.m_dogBrain;
 	return  *this;
 }
@@ -44,9 +46,8 @@ Dog::~Dog (void) {
 	return ;
 }
 
-void	Dog::getBrain(void) const {
-	std::cout << &this->m_dogBrain << std::endl;
-	return ;
+Brain*	Dog::getBrain(void) const {
+	return (this->m_dogBrain);
 }
 
 void Dog::makeSound (void) const {

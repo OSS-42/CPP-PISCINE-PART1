@@ -6,13 +6,13 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 09:09:33 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/05/02 15:55:21 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/05/03 15:44:37 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../inc/Cure.hpp"
 
-Cure::Cure (void) : AMateria("Cure") {
+Cure::Cure (void) : AMateria("cure") {
 	std::cout << GRN "Default Constr Cure" NC << std::endl;
 	return ;
 }
@@ -29,7 +29,7 @@ Cure& Cure::operator= (const Cure& rhs) {
 }
 
 Cure::~Cure (void) {
-	std::cout << RED "Cure melted" NC << std::endl;
+	std::cout << RED "Cure faded" NC << std::endl;
 }
 
 void	Cure::use(ICharacter& target) {

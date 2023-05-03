@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:07:01 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/28 17:23:27 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/05/03 15:20:24 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ Cat::Cat (std::string type) : AAnimal(type) {
 }
 
 Cat::Cat (const Cat& other) : AAnimal(other), m_catBrain(new Brain(*other.m_catBrain)) {
+	std::cout << YEL "Copycat" NC << std::endl;
 	*this = other;
 	return ;
 }

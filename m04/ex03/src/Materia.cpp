@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 18:00:26 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/05/02 15:53:40 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/05/03 14:14:35 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,5 @@ std::string const& AMateria::getType() const {
 
 void AMateria::use(ICharacter& target) {
 	std::cout << "Not able to use anything" << std::endl;
+	(void) target;
 }

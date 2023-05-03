@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 13:07:37 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/28 17:20:56 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/05/03 15:20:35 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ Dog::Dog (std::string type) : AAnimal(type) {
 }
 
 Dog::Dog (const Dog& other) : AAnimal(other), m_dogBrain(new Brain(*other.m_dogBrain)) {
+	std::cout << YEL "Copydog" NC << std::endl;
 	*this = other ;
 	return ;
 }

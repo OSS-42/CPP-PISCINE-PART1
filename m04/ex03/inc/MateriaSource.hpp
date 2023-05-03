@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 10:19:07 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/05/02 16:14:51 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/05/03 10:04:50 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,12 @@ class MateriaSource : public IMateriaSource {
 		MateriaSource& operator= (const MateriaSource& rhs);
 		~MateriaSource (void);
 
+		virtual void learnMateria(AMateria*);
+		virtual AMateria* createMateria(std::string const & type);
+
 	protected:
+		AMateria*	m_sourceInventory[4];
+		int			m_idxSourceInventory;
 
 	private:
 };

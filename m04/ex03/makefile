@@ -24,7 +24,8 @@ SRCS = 	src/main.cpp \
 		src/Materia.cpp \
 		src/Character.cpp \
 		src/Cure.cpp \
-		src/Ice.cpp
+		src/Ice.cpp \
+		src/MateriaSource.cpp
 
 #------------------------------------------------------------------------------#
 #									 RULES									   #

@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 11:06:10 by ewurstei          #+#    #+#             */
-/*   Updated: 2023/04/28 17:03:35 by ewurstei         ###   ########.fr       */
+/*   Updated: 2023/05/03 15:20:00 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ Brain::Brain (void) {
 }
 
 Brain::Brain (const Brain& other) {
+	std::cout << YEL "Brain Freeze" NC << std::endl;
 	*this = other;
 	return ;
 }
